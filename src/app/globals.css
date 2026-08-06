@@ -1060,9 +1060,6 @@ footer.site {
   }
 }
 @media (max-width: 900px) {
-  .hero .hv {
-    display: none;
-  }
   .qlinks {
     grid-template-columns: repeat(2, 1fr);
   }
