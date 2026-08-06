@@ -4,7 +4,14 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { site, waLink } from "@/data/site";
-import { Phone } from "./icons";
+import {
+  Phone,
+  Pin,
+  Mail,
+  Facebook,
+  Instagram,
+  WhatsAppOutline,
+} from "./icons";
 
 const links = [
   { href: "#props", label: "Comprar" },
@@ -13,6 +20,40 @@ const links = [
   { href: "#split", label: "Servicios" },
   { href: "#blog", label: "Actualidad" },
   { href: "#footer", label: "Contacto" },
+];
+
+const menuGroups = [
+  {
+    title: "Propiedades",
+    links: [
+      { href: "#props", label: "Residencias destacadas" },
+      { href: "#props", label: "Obra nueva" },
+      { href: "#props", label: "En alquiler" },
+    ],
+  },
+  {
+    title: "Comprar",
+    links: [
+      { href: "#props", label: "Explorar propiedades" },
+      { href: "#split", label: "Asesoría de compra" },
+    ],
+  },
+  {
+    title: "Vender",
+    links: [
+      { href: "#valorar", label: "Valora tu propiedad" },
+      { href: "#split", label: "Marketing digital" },
+    ],
+  },
+  {
+    title: "Nosotros",
+    links: [
+      { href: "#testi", label: "Testimonios" },
+      { href: "#blog", label: "Actualidad" },
+      { href: "#join", label: "Únete a la red" },
+      { href: "#footer", label: "Contacto" },
+    ],
+  },
 ];
 
 export default function Header() {
@@ -83,7 +124,7 @@ export default function Header() {
       <div className={`mob${open ? " open" : ""}`}>
         <div className="wrap top">
           <Image
-            src="/assets/logo-black.png"
+            src="/assets/logo-white.png"
             alt={site.name}
             width={93}
             height={40}
@@ -92,13 +133,65 @@ export default function Header() {
             ×
           </button>
         </div>
-        <nav className="wrap">
-          {links.map((l, i) => (
-            <a key={i} href={l.href} onClick={() => setOpen(false)}>
-              {l.label}
+        <div className="wrap mob-body">
+          <nav className="mob-grid" aria-label="Menú">
+            {menuGroups.map((g) => (
+              <div className="mg" key={g.title}>
+                <div className="mg-t">{g.title}</div>
+                {g.links.map((l) => (
+                  <a key={l.label} href={l.href} onClick={() => setOpen(false)}>
+                    {l.label}
+                  </a>
+                ))}
+              </div>
+            ))}
+          </nav>
+          <hr className="mob-rule" />
+          <div className="mob-contact">
+            <div className="mc-li">
+              <Pin />
+              <a href={site.address.mapUrl} target="_blank" rel="noopener">
+                {site.address.line1}
+                <br />
+                {site.address.line2}
+              </a>
+            </div>
+            <div className="mc-li">
+              <Phone />
+              <a href={`tel:${site.phoneTel}`}>{site.phoneIntl}</a>
+            </div>
+            <div className="mc-li">
+              <Mail />
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+            </div>
+          </div>
+          <div className="mob-soc">
+            <a
+              href={waLink("Hola Onker Home, quisiera más información.")}
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <Facebook />
             </a>
-          ))}
-        </nav>
+            <a
+              href={waLink("Hola Onker Home, quisiera más información.")}
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <Instagram />
+            </a>
+            <a
+              href={waLink("Hola Onker Home, quisiera más información.")}
+              target="_blank"
+              rel="noopener"
+              aria-label="WhatsApp"
+            >
+              <WhatsAppOutline />
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );
