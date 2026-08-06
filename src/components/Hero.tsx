@@ -10,7 +10,6 @@ export default function Hero() {
     <section className="hero" id="top">
       <picture>
         <source media="(max-width:900px)" srcSet="/assets/hero-m.jpg" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="bg"
           src="/assets/hero.jpg"

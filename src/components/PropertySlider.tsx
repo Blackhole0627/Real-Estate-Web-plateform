@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { properties } from "@/data/properties";
 import { useCarousel } from "./useCarousel";
 import { ArrowLeft, ArrowRight } from "./icons";
@@ -28,7 +29,7 @@ export default function PropertySlider() {
         <div className="p-view reveal">
           <div className="p-track" style={trackStyle}>
             {properties.map((p) => (
-              <a className="p-card" href="#footer" key={p.slug}>
+              <Link className="p-card" href={`/propiedades/${p.slug}`} key={p.slug}>
                 <div className="p-ph">
                   <span className="p-st">{p.status}</span>
                   <Image
@@ -52,7 +53,7 @@ export default function PropertySlider() {
                 <div className="p-foot">
                   <span className="p-more">Ver más</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
