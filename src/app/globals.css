@@ -17,6 +17,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* anchors clear the fixed header */
 }
 html,
 body {
@@ -150,14 +151,19 @@ h4 {
 
 /* ---------- HEADER ---------- */
 .hd {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background: #fff;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  background: transparent;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22); /* thin vague line over the hero */
+  transition: background 0.35s, color 0.35s, border-color 0.35s, box-shadow 0.35s;
 }
 .hd.stuck {
+  background: #fff;
+  color: var(--ink2);
   border-color: var(--rule);
   box-shadow: 0 1px 18px rgba(0, 0, 0, 0.05);
 }
@@ -181,7 +187,7 @@ h4 {
   font-size: 12.5px;
   font-weight: 500;
   letter-spacing: 0.06em;
-  color: var(--ink2);
+  color: inherit;
   position: relative;
   padding: 6px 0;
 }
@@ -192,7 +198,7 @@ h4 {
   bottom: 0;
   height: 1px;
   width: 0;
-  background: var(--ink);
+  background: currentColor;
   transition: width 0.3s var(--ease);
 }
 .nav a:hover::after {
@@ -208,6 +214,25 @@ h4 {
   font-weight: 600;
   letter-spacing: 0.04em;
 }
+.hd-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: inherit;
+}
+.hd-call svg {
+  width: 20px;
+  height: 20px;
+}
+.hd-sep {
+  display: none;
+  width: 1px;
+  height: 26px;
+  background: currentColor;
+  opacity: 0.35;
+}
 .burger {
   display: none;
   width: 40px;
@@ -215,6 +240,7 @@ h4 {
   border: none;
   background: none;
   cursor: pointer;
+  color: inherit;
   flex-direction: column;
   gap: 5px;
   justify-content: center;
@@ -224,7 +250,7 @@ h4 {
   display: block;
   height: 1.5px;
   width: 24px;
-  background: var(--ink);
+  background: currentColor;
 }
 
 /* ---------- MOBILE MENU ---------- */
@@ -895,53 +921,30 @@ h4 {
   border-color: #ec008c;
 }
 
-/* ---------- FOOTER ---------- */
+/* ---------- FOOTER (centered stack, IS Luxury-style) ---------- */
 footer.site {
+  position: relative;
   background: #181b23; /* navy blue-gray panel, lighter than the join band */
   color: #fff;
-  padding: clamp(64px, 9vh, 96px) 0 36px;
+  padding: clamp(64px, 9vh, 96px) 0 160px; /* bottom clearance for the SUBIR + WhatsApp floats */
+  text-align: center;
 }
-.f-main {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: clamp(30px, 5vw, 70px);
-  padding-bottom: 56px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-  align-items: start;
-}
-.f-id img {
+.f-logo {
   height: 56px;
   width: auto;
-  margin-bottom: 22px;
-}
-.f-id .legal {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
-  line-height: 1.8;
-  text-transform: uppercase;
-  margin: 0;
-}
-.f-id .tag {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
-  margin: 16px 0 0;
-  max-width: 40ch;
-}
-.f-contact {
-  display: flex;
-  gap: clamp(24px, 3vw, 48px);
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  margin: 0 auto 36px;
 }
 .f-list {
   display: grid;
-  gap: 14px;
+  gap: 16px;
+  justify-items: center;
+  margin-bottom: 30px;
 }
 .f-li {
   display: flex;
-  gap: 12px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
   color: rgba(255, 255, 255, 0.85);
   font-size: 13.5px;
   line-height: 1.6;
@@ -950,7 +953,6 @@ footer.site {
   width: 15px;
   height: 15px;
   flex: none;
-  margin-top: 3px;
   opacity: 0.8;
 }
 .f-li a:hover {
@@ -958,8 +960,9 @@ footer.site {
 }
 .f-soc {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 32px;
 }
 .f-soc a {
   opacity: 0.75;
@@ -972,33 +975,67 @@ footer.site {
   width: 17px;
   height: 17px;
 }
-.f-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  padding-top: 34px;
-  flex-wrap: wrap;
+.f-tag {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  max-width: 52ch;
+  margin: 0 auto;
+}
+.f-rule {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  margin: clamp(36px, 5vh, 48px) 0;
 }
 .f-nav {
-  display: flex;
-  gap: 10px 34px;
-  flex-wrap: wrap;
-  max-width: 560px;
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  margin-bottom: 44px;
 }
 .f-nav a {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
   transition: color 0.25s;
 }
 .f-nav a:hover {
   color: #fff;
 }
+.f-copy {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  margin: 0 0 8px;
+}
 .f-cred {
-  text-align: right;
   color: rgba(255, 255, 255, 0.42);
   font-size: 11.5px;
   line-height: 1.8;
+  margin: 0;
+}
+.f-top {
+  position: absolute;
+  right: 18px;
+  bottom: 90px; /* clears the fixed WhatsApp float when scrolled to the end */
+  width: 54px;
+  height: 54px;
+  background: #0c0e13;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #fff;
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.25s;
+}
+.f-top:hover {
+  background: #000;
+}
+.f-top svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* ---------- WHATSAPP FLOAT ---------- */
@@ -1032,7 +1069,8 @@ footer.site {
   .hd-tel {
     display: none;
   }
-  .burger {
+  .burger,
+  .hd-sep {
     display: flex;
   }
   .t-card,
@@ -1048,15 +1086,6 @@ footer.site {
   }
   .val-grid {
     grid-template-columns: 1fr;
-  }
-  .f-main {
-    grid-template-columns: 1fr;
-  }
-  .f-contact {
-    justify-content: flex-start;
-  }
-  .f-cred {
-    text-align: left;
   }
 }
 @media (max-width: 900px) {
