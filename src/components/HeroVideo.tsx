@@ -8,10 +8,11 @@ interface Props {
 }
 
 /**
- * Progressive-enhancement hero video.
- * Loads ONLY when: viewport >900px, no prefers-reduced-motion,
- * no Save-Data, and the hero is actually visible.
- * On mobile the element renders nothing at all — zero bytes downloaded.
+ * Progressive-enhancement hero video (Christie's-style behavior):
+ * the poster photo always paints first; the video loads on ALL
+ * viewports — including mobile — once the hero is visible, then
+ * fades in. Users on Save-Data, very slow connections, or with
+ * prefers-reduced-motion keep the photo only.
  */
 export default function HeroVideo({ src, poster }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -20,14 +21,15 @@ export default function HeroVideo({ src, poster }: Props) {
     const v = ref.current;
     if (!v) return;
 
-    type ConnectionInfo = { saveData?: boolean };
+    type ConnectionInfo = { saveData?: boolean; effectiveType?: string };
     const conn: ConnectionInfo =
       (navigator as Navigator & { connection?: ConnectionInfo }).connection ??
       {};
     const blocked =
-      window.innerWidth <= 900 ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      conn.saveData === true;
+      conn.saveData === true ||
+      conn.effectiveType === "slow-2g" ||
+      conn.effectiveType === "2g";
     if (blocked) return;
 
     let io: IntersectionObserver | undefined;
