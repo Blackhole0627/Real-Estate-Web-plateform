@@ -765,7 +765,7 @@ h4 {
 /* ---------- JOIN OUR NETWORK ---------- */
 .join {
   position: relative;
-  background: #15171c url(/assets/join-bg.jpg) center/cover no-repeat;
+  background: #131722 url(/assets/join-bg.jpg) center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: clamp(72px, 10vh, 110px) 0;
@@ -897,7 +897,7 @@ h4 {
 
 /* ---------- FOOTER ---------- */
 footer.site {
-  background: #101216;
+  background: #181b23; /* navy blue-gray panel, lighter than the join band */
   color: #fff;
   padding: clamp(64px, 9vh, 96px) 0 36px;
 }
