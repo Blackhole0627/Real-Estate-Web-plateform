@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "@/data/site";
 import {
   Pin,
@@ -62,12 +63,12 @@ export default function Footer() {
         </p>
         <hr className="f-rule" />
         <nav className="f-nav" aria-label="Enlaces">
-          <a href="#props">Comprar</a>
-          <a href="#valorar">Vender</a>
-          <a href="#props">Propiedades</a>
-          <a href="#testi">Testimonios</a>
-          <a href="#blog">Actualidad</a>
-          <a href="#join">Newsletter</a>
+          <Link href="/propiedades">Comprar</Link>
+          <Link href="/#valorar">Vender</Link>
+          <Link href="/propiedades">Propiedades</Link>
+          <Link href="/#testi">Testimonios</Link>
+          <Link href="/#blog">Actualidad</Link>
+          <Link href="/#join">Newsletter</Link>
         </nav>
         <p className="f-copy">
           © 2026 {site.legal} · Todos los derechos reservados

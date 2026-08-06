@@ -1107,6 +1107,241 @@ footer.site {
   height: 16px;
 }
 
+/* ---------- FOOTER: desktop layout (IS Luxury reference) ---------- */
+@media (min-width: 1001px) {
+  footer.site {
+    text-align: left;
+  }
+  footer.site .wrap {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr auto;
+    grid-template-areas:
+      "logo list soc"
+      "copy list soc"
+      "tag  tag  tag"
+      "rule rule rule"
+      "nav  nav  cred";
+    column-gap: clamp(40px, 6vw, 90px);
+    align-items: start;
+  }
+  .f-logo {
+    grid-area: logo;
+    margin: 0 0 26px;
+  }
+  .f-copy {
+    grid-area: copy;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.9;
+    max-width: 40ch;
+  }
+  .f-list {
+    grid-area: list;
+    justify-items: start;
+    margin: 0;
+  }
+  .f-li {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .f-soc {
+    grid-area: soc;
+    margin: 6px 0 0;
+  }
+  .f-tag {
+    grid-area: tag;
+    margin: 52px 0 0;
+    max-width: none;
+  }
+  .f-rule {
+    grid-area: rule;
+    width: 100%;
+  }
+  .f-nav {
+    grid-area: nav;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 36px;
+    justify-items: start;
+    margin: 0;
+    max-width: 620px;
+  }
+  .f-cred {
+    grid-area: cred;
+    text-align: right;
+  }
+}
+
+/* ---------- LISTINGS (index + detail) ---------- */
+.page {
+  padding-top: 84px; /* clears the fixed header */
+}
+.page-head {
+  padding: clamp(48px, 7vh, 80px) 0 0;
+}
+.l-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.l-tab {
+  border: 1px solid var(--rule);
+  background: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  color: var(--ink2);
+  transition: all 0.25s;
+}
+.l-tab:hover {
+  border-color: var(--ink);
+}
+.l-tab.on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.l-count {
+  color: var(--sec);
+  font-size: 12.5px;
+  margin: 0 0 28px;
+}
+.lgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 28px;
+}
+.lgrid .p-card {
+  flex: none;
+  padding: 0;
+}
+.l-hero {
+  position: relative;
+  height: clamp(320px, 52vh, 560px);
+  background: var(--alt);
+}
+.l-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+.l-back {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sec);
+  margin-bottom: 26px;
+}
+.l-back:hover {
+  color: var(--ink);
+}
+.l-st {
+  position: static;
+  display: inline-block;
+  margin-bottom: 16px;
+  border: 1px solid var(--rule);
+}
+.l-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1.15;
+  margin: 6px 0 10px;
+}
+.l-loc {
+  color: var(--sec);
+  font-size: 14px;
+  margin: 0 0 30px;
+}
+.l-body p {
+  margin: 0 0 18px;
+  line-height: 1.85;
+}
+.l-body h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 34px 0 14px;
+}
+.l-body ul {
+  margin: 0 0 18px;
+  padding-left: 20px;
+}
+.l-body li {
+  margin-bottom: 7px;
+  line-height: 1.7;
+}
+.l-aside {
+  position: sticky;
+  top: 108px;
+}
+.l-card {
+  border: 1px solid var(--rule);
+  padding: 30px 28px;
+}
+.l-price {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.l-specs {
+  color: var(--sec);
+  font-size: 13px;
+  margin: 8px 0 24px;
+}
+.btn.full {
+  width: 100%;
+  margin-bottom: 12px;
+}
+.l-note {
+  color: var(--sec);
+  font-size: 11.5px;
+  line-height: 1.7;
+  margin: 8px 0 0;
+}
+.l-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 26px;
+}
+.l-gph {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--alt);
+  overflow: hidden;
+}
+@media (max-width: 1000px) {
+  .lgrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .l-layout {
+    grid-template-columns: 1fr;
+  }
+  .l-aside {
+    position: static;
+  }
+  .l-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .lgrid {
+    grid-template-columns: 1fr;
+  }
+  .l-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- WHATSAPP FLOAT ---------- */
 .onker-wa {
   position: fixed;

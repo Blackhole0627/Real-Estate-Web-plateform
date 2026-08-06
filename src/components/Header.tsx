@@ -14,51 +14,52 @@ import {
 } from "./icons";
 
 const links = [
-  { href: "#props", label: "Comprar" },
-  { href: "#valorar", label: "Vender" },
-  { href: "#props", label: "Propiedades" },
-  { href: "#split", label: "Servicios" },
-  { href: "#blog", label: "Actualidad" },
-  { href: "#footer", label: "Contacto" },
+  { href: "/propiedades", label: "Comprar" },
+  { href: "/#valorar", label: "Vender" },
+  { href: "/propiedades", label: "Propiedades" },
+  { href: "/#split", label: "Servicios" },
+  { href: "/#blog", label: "Actualidad" },
+  { href: "/#footer", label: "Contacto" },
 ];
 
 const menuGroups = [
   {
     title: "Propiedades",
     links: [
-      { href: "#props", label: "Residencias destacadas" },
-      { href: "#props", label: "Obra nueva" },
-      { href: "#props", label: "En alquiler" },
+      { href: "/propiedades", label: "Residencias destacadas" },
+      { href: "/propiedades", label: "Obra nueva" },
+      { href: "/propiedades", label: "En alquiler" },
     ],
   },
   {
     title: "Comprar",
     links: [
-      { href: "#props", label: "Explorar propiedades" },
-      { href: "#split", label: "Asesoría de compra" },
+      { href: "/propiedades", label: "Explorar propiedades" },
+      { href: "/#split", label: "Asesoría de compra" },
     ],
   },
   {
     title: "Vender",
     links: [
-      { href: "#valorar", label: "Valora tu propiedad" },
-      { href: "#split", label: "Marketing digital" },
+      { href: "/#valorar", label: "Valora tu propiedad" },
+      { href: "/#split", label: "Marketing digital" },
     ],
   },
   {
     title: "Nosotros",
     links: [
-      { href: "#testi", label: "Testimonios" },
-      { href: "#blog", label: "Actualidad" },
-      { href: "#join", label: "Únete a la red" },
-      { href: "#footer", label: "Contacto" },
+      { href: "/#testi", label: "Testimonios" },
+      { href: "/#blog", label: "Actualidad" },
+      { href: "/#join", label: "Únete a la red" },
+      { href: "/#footer", label: "Contacto" },
     ],
   },
 ];
 
-export default function Header() {
+export default function Header({ solid = false }: { solid?: boolean }) {
   const [stuck, setStuck] = useState(false);
   const [open, setOpen] = useState(false);
+  const on = stuck || solid;
 
   useEffect(() => {
     const onScroll = () => setStuck(window.scrollY > 10);
@@ -76,11 +77,11 @@ export default function Header() {
 
   return (
     <>
-      <header className={`hd${stuck ? " stuck" : ""}`}>
+      <header className={`hd${on ? " stuck" : ""}`}>
         <div className="wrap hd-in">
-          <Link href="#top" className="brand" aria-label={site.name}>
+          <Link href="/" className="brand" aria-label={site.name}>
             <Image
-              src={stuck ? "/assets/logo-black.png" : "/assets/logo-white.png"}
+              src={on ? "/assets/logo-black.png" : "/assets/logo-white.png"}
               alt={site.name}
               width={103}
               height={44}
