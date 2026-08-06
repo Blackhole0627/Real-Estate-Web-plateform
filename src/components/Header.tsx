@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { site } from "@/data/site";
+import { site, waLink } from "@/data/site";
+import { Phone } from "./icons";
 
 const links = [
   { href: "#props", label: "Comprar" },
@@ -38,7 +39,7 @@ export default function Header() {
         <div className="wrap hd-in">
           <Link href="#top" className="brand" aria-label={site.name}>
             <Image
-              src="/assets/logo-black.png"
+              src={stuck ? "/assets/logo-black.png" : "/assets/logo-white.png"}
               alt={site.name}
               width={103}
               height={44}
@@ -56,6 +57,16 @@ export default function Header() {
             <a className="hd-tel" href={`tel:${site.phoneTel}`}>
               {site.phoneDisplay}
             </a>
+            <a
+              className="hd-call"
+              href={waLink("Hola Onker Home, quisiera hablar con un asesor.")}
+              target="_blank"
+              rel="noopener"
+              aria-label="Llámanos por WhatsApp"
+            >
+              <Phone />
+            </a>
+            <span className="hd-sep" aria-hidden="true" />
             <button
               className="burger"
               aria-label="Menú"
