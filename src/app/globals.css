@@ -158,14 +158,27 @@ h4 {
   z-index: 100;
   background: transparent;
   color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22); /* thin vague line over the hero */
-  transition: background 0.35s, color 0.35s, border-color 0.35s, box-shadow 0.35s;
+  transition: background 0.35s, color 0.35s, box-shadow 0.35s;
+}
+.hd::after {
+  /* thin vague line, inset to the content width */
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(1184px, calc(100% - 2 * clamp(20px, 4.5vw, 48px)));
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+  transition: background 0.35s;
 }
 .hd.stuck {
   background: #fff;
   color: var(--ink2);
-  border-color: var(--rule);
   box-shadow: 0 1px 18px rgba(0, 0, 0, 0.05);
+}
+.hd.stuck::after {
+  background: var(--rule);
 }
 .hd-in {
   display: flex;
@@ -209,32 +222,8 @@ h4 {
   align-items: center;
   gap: 18px;
 }
-.hd-tel {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-.hd-call {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  color: inherit;
-}
-.hd-call svg {
-  width: 20px;
-  height: 20px;
-}
-.hd-sep {
-  display: none;
-  width: 1px;
-  height: 26px;
-  background: currentColor;
-  opacity: 0.35;
-}
 .burger {
-  display: none;
+  display: flex;
   width: 40px;
   height: 40px;
   border: none;
@@ -1450,13 +1439,8 @@ footer.site {
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1000px) {
-  .nav,
-  .hd-tel {
+  .nav {
     display: none;
-  }
-  .burger,
-  .hd-sep {
-    display: flex;
   }
   .p-card {
     flex-basis: 50%;
