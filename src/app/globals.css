@@ -656,6 +656,13 @@ h4 {
   color: var(--ink2);
   max-width: 52ch;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* long quotes live in full on /testimonios */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.t2-stage {
+  min-height: 420px;
 }
 .t2-arrows {
   display: flex;
@@ -1476,6 +1483,40 @@ footer.site {
   font-size: 12px;
   letter-spacing: 0.06em;
   margin-top: 8px;
+}
+.tst-pag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 48px 0 8px;
+}
+.tst-pag .arr:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.tst-pag .arr:disabled:hover {
+  background: transparent;
+  color: inherit;
+}
+.tst-pg {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink2);
+  transition: 0.3s;
+}
+.tst-pg:hover {
+  border-color: var(--ink);
+}
+.tst-pg.on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
 }
 
 /* ---------- BRANDED SPLASH / LOADING ---------- */
