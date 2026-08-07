@@ -96,19 +96,6 @@ export default function Header({ solid = false }: { solid?: boolean }) {
             ))}
           </nav>
           <div className="hd-right">
-            <a className="hd-tel" href={`tel:${site.phoneTel}`}>
-              {site.phoneDisplay}
-            </a>
-            <a
-              className="hd-call"
-              href={waLink("Hola Onker Home, quisiera hablar con un asesor.")}
-              target="_blank"
-              rel="noopener"
-              aria-label="Llámanos por WhatsApp"
-            >
-              <Phone />
-            </a>
-            <span className="hd-sep" aria-hidden="true" />
             <button
               className="burger"
               aria-label="Menú"
