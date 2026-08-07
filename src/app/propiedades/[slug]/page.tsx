@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GalleryGrid from "@/components/GalleryGrid";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { site, waLink } from "@/data/site";
 import {
@@ -150,20 +151,7 @@ export default async function ListingPage(
           <section className="band tight">
             <div className="wrap">
               <span className="eyebrow">Galería</span>
-              <div className="l-gallery">
-                {photos.map((src, i) => (
-                  <div className="l-gph" key={src}>
-                    <Image
-                      src={src}
-                      alt={`${l.name} — foto ${i + 2}`}
-                      fill
-                      loading="lazy"
-                      sizes="(max-width:640px) 100vw, (max-width:1000px) 50vw, 33vw"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                ))}
-              </div>
+              <GalleryGrid photos={photos} name={l.name} />
             </div>
           </section>
         )}
