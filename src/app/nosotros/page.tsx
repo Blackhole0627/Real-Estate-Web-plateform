@@ -60,16 +60,6 @@ export default function NosotrosPage() {
 
         <section className="band tight">
           <div className="wrap">
-            <div className="n-photo reveal">
-              <Image
-                src="/assets/nosotros-padre.jpg"
-                alt="Franciel Ortega de niño junto a su padre"
-                width={1600}
-                height={800}
-                sizes="(max-width: 1000px) 100vw, 1184px"
-                style={{ width: "100%", height: "auto" }}
-              />
-            </div>
             <div className="n-story reveal">
               <p>Onker Home nunca fue simplemente una idea de negocio.</p>
               <p>
@@ -118,6 +108,16 @@ export default function NosotrosPage() {
                   profesional.
                 </p>
               </div>
+              <figure className="n-photo-mid">
+                <Image
+                  src="/assets/nosotros-padre.jpg"
+                  alt="Franciel Ortega de niño junto a su padre"
+                  width={1600}
+                  height={800}
+                  sizes="(max-width: 1000px) 100vw, 900px"
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </figure>
               <p>
                 Durante los últimos diez años, esos valores han guiado cada paso
                 de mi trayectoria. Cada cliente que confía en mí, cada
@@ -154,19 +154,20 @@ export default function NosotrosPage() {
               <h3>República Dominicana, donde el lujo se vive</h3>
             </div>
             <div className="dst-grid reveal">
-              <VideoPlayer
-                src="/sky-video.mp4"
-                label="Ver la propiedad desde el aire"
-              />
               <div className="dst-ph">
                 <Image
                   src="/assets/destino.jpg"
                   alt="Vista aérea de la marina de Cap Cana"
                   fill
-                  sizes="(max-width:1000px) 100vw, 34vw"
+                  sizes="(max-width:1000px) 100vw, 60vw"
                   style={{ objectFit: "cover" }}
                 />
               </div>
+              <VideoPlayer
+                src="/sky-video.mp4"
+                label="Ver desde el aire"
+                portrait
+              />
             </div>
           </div>
         </section>

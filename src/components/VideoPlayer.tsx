@@ -5,10 +5,12 @@ import { useRef, useState } from "react";
 interface Props {
   src: string;
   label: string;
+  /** Vertical phone-style frame (9:16) for mobile-shot footage. */
+  portrait?: boolean;
 }
 
 /** Click-to-play video: nothing plays (or downloads beyond metadata) until the user asks. */
-export default function VideoPlayer({ src, label }: Props) {
+export default function VideoPlayer({ src, label, portrait = false }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -18,7 +20,7 @@ export default function VideoPlayer({ src, label }: Props) {
   };
 
   return (
-    <div className="vp">
+    <div className={`vp${portrait ? " portrait" : ""}`}>
       <video
         ref={ref}
         src={src}
