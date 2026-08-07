@@ -9,7 +9,10 @@ import {
   Pin,
   Mail,
   Facebook,
+  XTwitter,
   Instagram,
+  LinkedIn,
+  YouTube,
   WhatsAppOutline,
 } from "./icons";
 
@@ -167,9 +170,33 @@ export default function Header({ solid = false }: { solid?: boolean }) {
               href={waLink("Hola Onker Home, quisiera más información.")}
               target="_blank"
               rel="noopener"
+              aria-label="X"
+            >
+              <XTwitter />
+            </a>
+            <a
+              href={waLink("Hola Onker Home, quisiera más información.")}
+              target="_blank"
+              rel="noopener"
               aria-label="Instagram"
             >
               <Instagram />
+            </a>
+            <a
+              href={waLink("Hola Onker Home, quisiera más información.")}
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <LinkedIn />
+            </a>
+            <a
+              href={waLink("Hola Onker Home, quisiera más información.")}
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <YouTube />
             </a>
             <a
               href={waLink("Hola Onker Home, quisiera más información.")}
