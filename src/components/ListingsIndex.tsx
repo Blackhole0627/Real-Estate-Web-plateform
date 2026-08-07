@@ -81,7 +81,7 @@ export default function ListingsIndex() {
         <input
           type="search"
           className="l-search"
-          placeholder="Busca por ciudad, sector o propiedad…"
+          placeholder="Busca por ciudad, sector o propiedad"
           aria-label="Buscar propiedades"
           value={q}
           onChange={(e) => setQ(e.target.value)}

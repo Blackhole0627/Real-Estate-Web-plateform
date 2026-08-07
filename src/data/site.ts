@@ -19,6 +19,10 @@ export const site = {
       "https://maps.google.com/?q=Plaza+Royal+Av+Simon+Bolivar+esq+Maximo+Gomez+Santo+Domingo",
   },
   hours: "Lun–Vie 9:00–18:00 · Sáb 9:00–13:00",
+  social: {
+    instagram: "https://www.instagram.com/onker_home/",
+    facebook: "https://www.facebook.com/share/19UTQpbyqN/",
+  },
   stats: [
     { n: "3,000+", l: "Clientes atendidos" },
     { n: "95%", l: "Índice de satisfacción" },
