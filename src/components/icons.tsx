@@ -111,6 +111,64 @@ export const WhatsAppOutline = () => (
   </svg>
 );
 
+export const XTwitter = () => (
+  <svg viewBox="0 0 24 24" fill="none">
+    <path
+      d="M5 4h4.3l9.7 16h-4.3L5 4z"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M19.5 4l-6.4 7.6M4.5 20l6.5-7.7"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+export const LinkedIn = () => (
+  <svg viewBox="0 0 24 24" fill="none">
+    <rect
+      x="3"
+      y="3"
+      width="18"
+      height="18"
+      rx="2"
+      stroke="currentColor"
+      strokeWidth="1.4"
+    />
+    <path
+      d="M8 11v6M8 7.5v.1M12 17v-3.5a2.25 2.25 0 0 1 4.5 0V17"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const YouTube = () => (
+  <svg viewBox="0 0 24 24" fill="none">
+    <rect
+      x="3"
+      y="6"
+      width="18"
+      height="12"
+      rx="3"
+      stroke="currentColor"
+      strokeWidth="1.4"
+    />
+    <path
+      d="M10.5 9.5l4.5 2.5-4.5 2.5v-5z"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export const Heart = () => (
   <svg viewBox="0 0 24 24" fill="none">
     <path
