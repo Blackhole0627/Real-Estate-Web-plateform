@@ -1412,6 +1412,86 @@ footer.site {
   }
 }
 
+/* ---------- NOSOTROS ---------- */
+.n-photo {
+  margin-bottom: clamp(40px, 6vh, 64px);
+}
+.n-story {
+  max-width: 68ch;
+  margin: 0 auto;
+}
+.n-story p {
+  margin: 0 0 20px;
+  line-height: 1.9;
+  font-size: 15.5px;
+}
+.n-pull {
+  border-left: 2px solid var(--ink);
+  padding: 6px 0 6px 26px;
+  margin: 34px 0;
+}
+.n-pull p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+.n-sign {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--sec);
+  margin-top: 30px;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.tm-card {
+  text-align: center;
+}
+.tm-ph {
+  position: relative;
+  aspect-ratio: 3/3.4;
+  background: var(--alt);
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.tm-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+.tm-role {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sec);
+  margin-top: 6px;
+}
+.n-cta {
+  background: #181b23;
+  color: #fff;
+}
+.n-cta .sub2 {
+  color: rgba(255, 255, 255, 0.65);
+  margin: 14px 0 30px;
+}
+.n-cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+  }
+}
+
 /* ---------- WHATSAPP FLOAT ---------- */
 .onker-wa {
   position: fixed;

@@ -2,6 +2,10 @@
 export const site = {
   name: "Onker Home",
   legal: "ONKERHOME E.I.R.L.",
+  /** Production origin — confirm with the client (old Wix site was onkerhomes.com). */
+  url: "https://onkerhomes.com",
+  /** Google Search Console verification token — paste when the client registers. */
+  googleSiteVerification: "",
   tagline: "Donde el lujo se vive.",
   phoneDisplay: "849 342 6066",
   phoneIntl: "+1 849 342 6066",

@@ -5,9 +5,10 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ListingsIndex from "@/components/ListingsIndex";
 
 export const metadata: Metadata = {
-  title: "Propiedades · Onker Home",
+  title: "Propiedades",
   description:
     "Residencias de excepción en venta y alquiler en Santo Domingo, Cap Cana, Casa de Campo, Las Terrenas y las mejores zonas de República Dominicana.",
+  alternates: { canonical: "/propiedades" },
 };
 
 export default function PropiedadesPage() {
