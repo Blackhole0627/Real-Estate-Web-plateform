@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { listings, listingCover, type Listing } from "@/data/listings";
 import type { PropertyStatus } from "@/data/properties";
 
@@ -12,6 +13,14 @@ const FILTERS: { key: PropertyStatus | "Todas"; label: string }[] = [
   { key: "En alquiler", label: "En alquiler" },
   { key: "Obra nueva", label: "Obra nueva" },
 ];
+
+/** Case- and accent-insensitive match ("cacícazgos" finds "Cacicazgos"). */
+function norm(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "");
+}
 
 function Card({ l }: { l: Listing }) {
   return (
@@ -42,31 +51,70 @@ function Card({ l }: { l: Listing }) {
 }
 
 export default function ListingsIndex() {
+  const searchParams = useSearchParams();
   const [filter, setFilter] = useState<PropertyStatus | "Todas">("Todas");
-  const shown =
-    filter === "Todas" ? listings : listings.filter((l) => l.status === filter);
+  const [q, setQ] = useState(searchParams.get("q") ?? "");
+
+  const needle = norm(q.trim());
+  const shown = listings.filter((l) => {
+    if (filter !== "Todas" && l.status !== filter) return false;
+    if (!needle) return true;
+    return norm(
+      `${l.name} ${l.location} ${l.specs} ${l.status} ${l.body}`,
+    ).includes(needle);
+  });
 
   return (
     <div className="wrap">
-      <div className="l-filters" role="group" aria-label="Filtrar propiedades">
-        {FILTERS.map((f) => (
-          <button
-            key={f.key}
-            className={`l-tab${filter === f.key ? " on" : ""}`}
-            onClick={() => setFilter(f.key)}
-          >
-            {f.label}
-          </button>
-        ))}
+      <div className="l-controls">
+        <div className="l-filters" role="group" aria-label="Filtrar propiedades">
+          {FILTERS.map((f) => (
+            <button
+              key={f.key}
+              className={`l-tab${filter === f.key ? " on" : ""}`}
+              onClick={() => setFilter(f.key)}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+        <input
+          type="search"
+          className="l-search"
+          placeholder="Busca por ciudad, sector o propiedad…"
+          aria-label="Buscar propiedades"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+        />
       </div>
-      <p className="l-count">
+      <p className="l-count" aria-live="polite">
         {shown.length} {shown.length === 1 ? "propiedad" : "propiedades"}
+        {q.trim() ? ` para “${q.trim()}”` : ""}
       </p>
-      <div className="lgrid">
-        {shown.map((l) => (
-          <Card l={l} key={l.slug} />
-        ))}
-      </div>
+      {shown.length > 0 ? (
+        <div className="lgrid">
+          {shown.map((l) => (
+            <Card l={l} key={l.slug} />
+          ))}
+        </div>
+      ) : (
+        <div className="l-empty">
+          <p>
+            No encontramos propiedades para esa búsqueda. Cuéntanos qué buscas y
+            un asesor te enviará opciones a tu medida.
+          </p>
+          <a
+            className="btn solid"
+            href={`https://wa.me/18493426066?text=${encodeURIComponent(
+              `Hola Onker Home, busco: ${q.trim() || "una propiedad"}. ¿Qué opciones tienen?`,
+            )}`}
+            target="_blank"
+            rel="noopener"
+          >
+            Consultar por WhatsApp
+          </a>
+        </div>
+      )}
     </div>
   );
 }

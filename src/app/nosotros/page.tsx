@@ -35,13 +35,22 @@ const team = [
 export default function NosotrosPage() {
   return (
     <>
-      <Header solid />
-      <main id="top" className="page">
-        <section className="page-head">
-          <div className="wrap" style={{ textAlign: "center" }}>
+      <Header />
+      <main id="top">
+        <section className="n-hero">
+          <Image
+            src="/assets/nosotros-hero.jpg"
+            alt="Oficina de Onker Home Real Estate"
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
+          />
+          <div className="n-hero-in">
             <span className="eyebrow">Nosotros</span>
-            <h2 style={{ marginTop: 16 }}>Por qué existe Onker Home</h2>
-            <p className="sub" style={{ margin: "16px auto 0" }}>
+            <h1>Por qué existe Onker Home</h1>
+            <div className="n-hero-rule" aria-hidden="true" />
+            <p>
               La primera inmobiliaria boutique de República Dominicana
               especializada en marketing digital. {site.tagline}
             </p>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -27,7 +28,9 @@ export default function PropiedadesPage() {
           </div>
         </section>
         <section className="band tight">
-          <ListingsIndex />
+          <Suspense fallback={null}>
+            <ListingsIndex />
+          </Suspense>
         </section>
       </main>
       <Footer />

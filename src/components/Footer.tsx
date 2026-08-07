@@ -79,7 +79,7 @@ export default function Footer() {
           <Link href="/#valorar">Vender</Link>
           <Link href="/propiedades">Propiedades</Link>
           <Link href="/nosotros">Nosotros</Link>
-          <Link href="/#testi">Testimonios</Link>
+          <Link href="/testimonios">Testimonios</Link>
           <Link href="/#join">Newsletter</Link>
         </nav>
         <p className="f-copy">
