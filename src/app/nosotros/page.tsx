@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StatBand from "@/components/StatBand";
+import VideoPlayer from "@/components/VideoPlayer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Reveal from "@/components/Reveal";
 import { site, waLink } from "@/data/site";
@@ -142,6 +143,30 @@ export default function NosotrosPage() {
               <p className="n-sign">
                 — Franciel Ortega · Asesor y Fundador
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="band tight destino">
+          <div className="wrap">
+            <div className="t2-head reveal">
+              <span className="eyebrow">Nuestro destino</span>
+              <h3>República Dominicana, donde el lujo se vive</h3>
+            </div>
+            <div className="dst-grid reveal">
+              <VideoPlayer
+                src="/sky-video.mp4"
+                label="Ver la propiedad desde el aire"
+              />
+              <div className="dst-ph">
+                <Image
+                  src="/assets/destino.jpg"
+                  alt="Vista aérea de la marina de Cap Cana"
+                  fill
+                  sizes="(max-width:1000px) 100vw, 34vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
             </div>
           </div>
         </section>
