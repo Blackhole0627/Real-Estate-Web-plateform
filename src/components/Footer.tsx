@@ -7,7 +7,10 @@ import {
   Mail,
   Clock,
   Facebook,
+  XTwitter,
   Instagram,
+  LinkedIn,
+  YouTube,
   WhatsAppOutline,
 } from "./icons";
 
@@ -50,8 +53,17 @@ export default function Footer() {
           <a href={waFallback} target="_blank" rel="noopener" aria-label="Facebook">
             <Facebook />
           </a>
+          <a href={waFallback} target="_blank" rel="noopener" aria-label="X">
+            <XTwitter />
+          </a>
           <a href={waFallback} target="_blank" rel="noopener" aria-label="Instagram">
             <Instagram />
+          </a>
+          <a href={waFallback} target="_blank" rel="noopener" aria-label="LinkedIn">
+            <LinkedIn />
+          </a>
+          <a href={waFallback} target="_blank" rel="noopener" aria-label="YouTube">
+            <YouTube />
           </a>
           <a href={waFallback} target="_blank" rel="noopener" aria-label="WhatsApp">
             <WhatsAppOutline />
