@@ -31,6 +31,11 @@ const team = [
     role: "Consultor Inmobiliario",
     photo: "/assets/sergio-javier.jpg",
   },
+  {
+    name: "Eddy Richarson",
+    role: "Consultor Inmobiliario",
+    photo: "/assets/eddy-richarson.jpg",
+  },
 ];
 
 export default function NosotrosPage() {
