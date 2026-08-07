@@ -50,13 +50,23 @@ export default function Footer() {
           </div>
         </div>
         <div className="f-soc">
-          <a href={waFallback} target="_blank" rel="noopener" aria-label="Facebook">
+          <a
+            href={site.social.facebook}
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+          >
             <Facebook />
           </a>
           <a href={waFallback} target="_blank" rel="noopener" aria-label="X">
             <XTwitter />
           </a>
-          <a href={waFallback} target="_blank" rel="noopener" aria-label="Instagram">
+          <a
+            href={site.social.instagram}
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
             <Instagram />
           </a>
           <a href={waFallback} target="_blank" rel="noopener" aria-label="LinkedIn">

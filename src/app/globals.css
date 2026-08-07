@@ -1939,6 +1939,13 @@ footer.site {
   .hsearch button {
     padding: 0 18px;
   }
+  .hsearch input {
+    font-size: 13px;
+    padding: 16px 14px;
+  }
+  .hsearch .bt {
+    display: none; /* icon-only search button frees room for the placeholder */
+  }
   .qlinks {
     grid-template-columns: 1fr 1fr;
     gap: 10px;

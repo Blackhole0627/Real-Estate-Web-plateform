@@ -159,7 +159,7 @@ export default function Header({ solid = false }: { solid?: boolean }) {
           </div>
           <div className="mob-soc">
             <a
-              href={waLink("Hola Onker Home, quisiera más información.")}
+              href={site.social.facebook}
               target="_blank"
               rel="noopener"
               aria-label="Facebook"
@@ -175,7 +175,7 @@ export default function Header({ solid = false }: { solid?: boolean }) {
               <XTwitter />
             </a>
             <a
-              href={waLink("Hola Onker Home, quisiera más información.")}
+              href={site.social.instagram}
               target="_blank"
               rel="noopener"
               aria-label="Instagram"

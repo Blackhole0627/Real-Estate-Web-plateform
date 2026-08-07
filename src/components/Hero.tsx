@@ -27,18 +27,18 @@ export default function Hero() {
           con atención de primera.
         </h1>
         <p>
-          Compra, alquila, vende e invierte en las mejores zonas de Santo
-          Domingo y el Caribe.
+          Compra, alquila, vende e invierte en las mejores zonas de República
+          Dominicana.
         </p>
         <form className="hsearch" action="/propiedades">
           <input
             type="text"
             name="q"
-            placeholder="Busca por ciudad, sector o tipo de propiedad…"
+            placeholder="Busca por ciudad, sector o propiedad"
             aria-label="Buscar propiedades"
           />
-          <button type="submit">
-            Buscar{" "}
+          <button type="submit" aria-label="Buscar">
+            <span className="bt">Buscar</span>{" "}
             <svg viewBox="0 0 24 24" fill="none">
               <circle
                 cx="11"
