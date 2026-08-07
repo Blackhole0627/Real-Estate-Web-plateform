@@ -17,7 +17,7 @@ const links = [
   { href: "/propiedades", label: "Comprar" },
   { href: "/#valorar", label: "Vender" },
   { href: "/propiedades", label: "Propiedades" },
-  { href: "/#split", label: "Servicios" },
+  { href: "/nosotros", label: "Nosotros" },
   { href: "/#blog", label: "Actualidad" },
   { href: "/#footer", label: "Contacto" },
 ];
@@ -48,8 +48,9 @@ const menuGroups = [
   {
     title: "Nosotros",
     links: [
+      { href: "/nosotros", label: "Nuestra historia" },
+      { href: "/nosotros#equipo", label: "Nuestro equipo" },
       { href: "/#testi", label: "Testimonios" },
-      { href: "/#blog", label: "Actualidad" },
       { href: "/#join", label: "Únete a la red" },
       { href: "/#footer", label: "Contacto" },
     ],

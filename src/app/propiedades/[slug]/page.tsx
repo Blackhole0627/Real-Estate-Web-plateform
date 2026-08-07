@@ -22,10 +22,15 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = await props.params;
   const l = getListing(slug);
-  if (!l) return { title: "Propiedad · Onker Home" };
+  if (!l) return { title: "Propiedad" };
   return {
-    title: `${l.name} · ${l.location} · Onker Home`,
+    title: `${l.name} · ${l.location}`,
     description: `${l.name} — ${l.specs} — ${l.location}. ${l.status} por Onker Home.`,
+    alternates: { canonical: `/propiedades/${l.slug}` },
+    openGraph: {
+      title: `${l.name} · ${l.location}`,
+      images: [{ url: listingCover(l) }],
+    },
   };
 }
 
@@ -78,6 +83,25 @@ export default async function ListingPage(
   const wa = waLink(
     `Hola Onker Home, me interesa la propiedad "${l.name}" (${l.location}). ¿Podemos coordinar más detalles?`,
   );
+
+  const numericPrice = Number(l.price.replace(/[^0-9.]/g, ""));
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    name: l.name,
+    url: `${site.url}/propiedades/${l.slug}`,
+    image: `${site.url}${cover}`,
+    description: `${l.name} — ${l.specs} — ${l.location}. ${l.status} por Onker Home.`,
+    ...(Number.isFinite(numericPrice) && numericPrice > 0
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: numericPrice,
+            priceCurrency: "USD",
+          },
+        }
+      : {}),
+  };
 
   return (
     <>
@@ -146,6 +170,10 @@ export default async function ListingPage(
       </main>
       <Footer />
       <WhatsAppFloat />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   );
 }
