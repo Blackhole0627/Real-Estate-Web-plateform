@@ -50,7 +50,7 @@ const menuGroups = [
     links: [
       { href: "/nosotros", label: "Nuestra historia" },
       { href: "/nosotros#equipo", label: "Nuestro equipo" },
-      { href: "/#testi", label: "Testimonios" },
+      { href: "/testimonios", label: "Testimonios" },
       { href: "/#join", label: "Únete a la red" },
       { href: "/#footer", label: "Contacto" },
     ],

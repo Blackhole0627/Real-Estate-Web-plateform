@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Lora, Inter } from "next/font/google";
+import Image from "next/image";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -46,7 +47,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es-DO" className={`${lora.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div className="splash" aria-hidden="true">
+          <Image
+            src="/assets/logo-black.png"
+            alt=""
+            width={150}
+            height={64}
+            priority
+          />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

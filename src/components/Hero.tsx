@@ -30,7 +30,7 @@ export default function Hero() {
           Compra, alquila, vende e invierte en las mejores zonas de Santo
           Domingo y el Caribe.
         </p>
-        <form className="hsearch" action="#props">
+        <form className="hsearch" action="/propiedades">
           <input
             type="text"
             name="q"

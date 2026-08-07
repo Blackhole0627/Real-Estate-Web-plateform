@@ -1250,11 +1250,41 @@ footer.site {
 .page-head {
   padding: clamp(48px, 7vh, 80px) 0 0;
 }
+.l-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
 .l-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 10px;
+}
+.l-search {
+  border: 1px solid var(--rule);
+  background: #fff;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  padding: 11px 16px;
+  width: min(360px, 100%);
+  color: var(--ink2);
+}
+.l-search:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+.l-empty {
+  text-align: center;
+  padding: 48px 0 24px;
+}
+.l-empty p {
+  color: var(--sec);
+  max-width: 52ch;
+  margin: 0 auto 26px;
+  line-height: 1.8;
 }
 .l-tab {
   border: 1px solid var(--rule);
@@ -1412,7 +1442,125 @@ footer.site {
   }
 }
 
+/* ---------- TESTIMONIOS PAGE (ALG-style centered list) ---------- */
+.tst-item {
+  text-align: center;
+  padding: clamp(44px, 7vh, 76px) 0;
+  border-bottom: 1px solid var(--rule);
+}
+.tst-item:last-of-type {
+  border-bottom: none;
+}
+.tst-mark {
+  font-family: var(--serif);
+  font-size: 88px;
+  line-height: 0.4;
+  color: #d9d9d9;
+  padding-top: 26px;
+}
+.tst-quote {
+  max-width: 62ch;
+  margin: 26px auto 30px;
+  line-height: 1.9;
+  font-size: 15.5px;
+  color: var(--ink2);
+}
+.tst-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin: 0;
+}
+.tst-tag {
+  color: var(--sec);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  margin-top: 8px;
+}
+
+/* ---------- BRANDED SPLASH / LOADING ---------- */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* never trap clicks, even mid-fade */
+  animation: splash-hide 0.5s ease 0.9s forwards;
+}
+.splash img {
+  height: 64px;
+  width: auto;
+  opacity: 0;
+  animation: splash-logo 0.6s ease 0.1s forwards;
+}
+.splash.route {
+  animation: none; /* unmounts when the route is ready */
+}
+@keyframes splash-logo {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes splash-hide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash {
+    display: none;
+  }
+}
+
 /* ---------- NOSOTROS ---------- */
+.n-hero {
+  position: relative;
+  min-height: clamp(440px, 62vh, 660px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.n-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(10, 12, 16, 0.48), rgba(10, 12, 16, 0.62));
+}
+.n-hero-in {
+  position: relative;
+  z-index: 2;
+  padding: 110px 20px 50px; /* clears the fixed transparent header */
+  max-width: 800px;
+}
+.n-hero-in .eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+.n-hero-in h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  margin: 18px 0 0;
+}
+.n-hero-rule {
+  width: 90px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.55);
+  margin: 28px auto;
+}
+.n-hero-in p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
 .n-photo {
   margin-bottom: clamp(40px, 6vh, 64px);
 }
