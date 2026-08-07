@@ -75,7 +75,7 @@ export default function Footer() {
         </p>
         <hr className="f-rule" />
         <nav className="f-nav" aria-label="Enlaces">
-          <Link href="/propiedades">Comprar</Link>
+          <Link href="/#split">Comprar</Link>
           <Link href="/#valorar">Vender</Link>
           <Link href="/propiedades">Propiedades</Link>
           <Link href="/nosotros">Nosotros</Link>

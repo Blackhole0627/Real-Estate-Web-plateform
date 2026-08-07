@@ -17,7 +17,7 @@ import {
 } from "./icons";
 
 const links = [
-  { href: "/propiedades", label: "Comprar" },
+  { href: "/#split", label: "Comprar" },
   { href: "/#valorar", label: "Vender" },
   { href: "/propiedades", label: "Propiedades" },
   { href: "/nosotros", label: "Nosotros" },
