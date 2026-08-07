@@ -1718,6 +1718,9 @@ footer.site {
   line-height: 1.6;
   margin: 0 0 10px;
 }
+.n-photo-mid {
+  margin: 40px 0;
+}
 .n-sign {
   font-family: var(--serif);
   font-style: italic;
@@ -1757,15 +1760,16 @@ footer.site {
 }
 .dst-grid {
   display: grid;
-  grid-template-columns: 1.9fr 1fr;
-  gap: 16px;
-  align-items: stretch;
+  grid-template-columns: 1.7fr auto;
+  gap: clamp(20px, 3vw, 44px);
+  align-items: center;
 }
 .dst-ph {
   position: relative;
   background: var(--alt);
   overflow: hidden;
   min-height: 300px;
+  align-self: stretch;
 }
 .vp {
   position: relative;
@@ -1778,6 +1782,27 @@ footer.site {
   height: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+}
+/* Phone-shaped frame for vertical (mobile-shot) footage */
+.vp.portrait {
+  aspect-ratio: 9/16;
+  height: clamp(440px, 62vh, 580px);
+  width: auto;
+  margin: 0 auto;
+  border-radius: 30px;
+  border: 9px solid #0c0e13;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+}
+.vp.portrait video {
+  aspect-ratio: 9/16;
+  border-radius: 21px;
+}
+.vp.portrait .vp-play {
+  border-radius: 21px;
+}
+.vp.portrait .vp-btn {
+  width: 62px;
+  height: 62px;
 }
 .vp-play {
   position: absolute;
