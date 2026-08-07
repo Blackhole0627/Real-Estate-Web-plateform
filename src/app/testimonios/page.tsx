@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Reveal from "@/components/Reveal";
-import { testimonials } from "@/data/content";
+import TestimonialsList from "@/components/TestimonialsList";
 import { site, waLink } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -16,13 +17,22 @@ export const metadata: Metadata = {
 export default function TestimoniosPage() {
   return (
     <>
-      <Header solid />
-      <main id="top" className="page">
-        <section className="page-head">
-          <div className="wrap" style={{ textAlign: "center" }}>
+      <Header />
+      <main id="top">
+        <section className="n-hero">
+          <Image
+            src="/assets/sell-banner.jpg"
+            alt="Letrero de Onker Home Real Estate"
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
+          />
+          <div className="n-hero-in">
             <span className="eyebrow">Testimonios</span>
-            <h2 style={{ marginTop: 16 }}>Lo que dicen nuestros clientes</h2>
-            <p className="sub" style={{ margin: "16px auto 0" }}>
+            <h1>Lo que dicen nuestros clientes</h1>
+            <div className="n-hero-rule" aria-hidden="true" />
+            <p>
               Historias reales de compras, ventas, alquileres e inversiones
               acompañadas de principio a fin.
             </p>
@@ -30,18 +40,7 @@ export default function TestimoniosPage() {
         </section>
 
         <section className="band tight">
-          <div className="wrap">
-            {testimonials.map((t) => (
-              <article className="tst-item reveal" key={t.name}>
-                <div className="tst-mark" aria-hidden="true">
-                  &ldquo;
-                </div>
-                <p className="tst-quote">{t.quote}</p>
-                <h3 className="tst-name">{t.name}</h3>
-                <div className="tst-tag">{t.tag}</div>
-              </article>
-            ))}
-          </div>
+          <TestimonialsList />
         </section>
 
         <section className="band tight n-cta">
