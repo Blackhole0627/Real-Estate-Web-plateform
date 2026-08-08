@@ -21,7 +21,7 @@ const links = [
   { href: "/#valorar", label: "Vender" },
   { href: "/propiedades", label: "Propiedades" },
   { href: "/nosotros", label: "Nosotros" },
-  { href: "/#blog", label: "Actualidad" },
+  { href: "/actualidad", label: "Actualidad" },
   { href: "/#footer", label: "Contacto" },
 ];
 
@@ -54,6 +54,7 @@ const menuGroups = [
       { href: "/nosotros", label: "Nuestra historia" },
       { href: "/nosotros#equipo", label: "Nuestro equipo" },
       { href: "/testimonios", label: "Testimonios" },
+      { href: "/actualidad", label: "Actualidad" },
       { href: "/#join", label: "Únete a la red" },
       { href: "/#footer", label: "Contacto" },
     ],

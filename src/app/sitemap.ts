@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/data/site";
 import { listings } from "@/data/listings";
+import { NEWS } from "@/lib/news";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -16,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${site.url}/propiedades/${l.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    { url: `${site.url}/actualidad`, changeFrequency: "weekly", priority: 0.8 },
+    ...NEWS.map((n) => ({
+      url: `${site.url}/actualidad/${n.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
   ];
 }
