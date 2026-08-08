@@ -1,7 +1,9 @@
 import Image from "next/image";
-import { articles } from "@/data/content";
+import Link from "next/link";
+import { getArticles } from "@/lib/news";
 
 export default function Articles() {
+  const latest = getArticles().slice(0, 3);
   return (
     <section className="band" id="blog">
       <div className="wrap">
@@ -10,13 +12,17 @@ export default function Articles() {
             <span className="eyebrow">Actualidad</span>
             <h3 style={{ marginTop: 14 }}>Últimos artículos</h3>
           </div>
-          <a className="p-more" href="#blog">
+          <Link className="p-more" href="/actualidad">
             Ver todos
-          </a>
+          </Link>
         </div>
         <div className="art-grid">
-          {articles.map((a) => (
-            <a className="a-card reveal" href="#blog" key={a.title}>
+          {latest.map((a) => (
+            <Link
+              className="a-card reveal"
+              href={`/actualidad/${a.slug}`}
+              key={a.slug}
+            >
               <div className="a-ph">
                 <Image
                   src={a.image}
@@ -26,10 +32,10 @@ export default function Articles() {
                   style={{ objectFit: "cover" }}
                 />
               </div>
-              <div className="a-tag">{a.tag}</div>
+              <div className="a-tag">{a.category}</div>
               <div className="a-title">{a.title}</div>
-              <p className="a-ex">{a.excerpt}</p>
-            </a>
+              <p className="a-ex">{a.lede}</p>
+            </Link>
           ))}
         </div>
       </div>

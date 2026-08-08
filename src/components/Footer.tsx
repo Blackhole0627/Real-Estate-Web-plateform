@@ -90,6 +90,7 @@ export default function Footer() {
           <Link href="/propiedades">Propiedades</Link>
           <Link href="/nosotros">Nosotros</Link>
           <Link href="/testimonios">Testimonios</Link>
+          <Link href="/actualidad">Actualidad</Link>
           <Link href="/#join">Newsletter</Link>
         </nav>
         <p className="f-copy">

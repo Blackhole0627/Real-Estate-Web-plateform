@@ -134,33 +134,3 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-export interface Article {
-  tag: string;
-  title: string;
-  excerpt: string;
-  image: string;
-}
-
-export const articles: Article[] = [
-  {
-    tag: "Inversión",
-    title: "Por qué el Este dominicano no deja de crecer",
-    excerpt:
-      "Rentabilidad, turismo y plusvalía: la ecuación que atrae al inversionista internacional.",
-    image: "/assets/props/dest-capcana.jpg",
-  },
-  {
-    tag: "Guía",
-    title: "Comprar en República Dominicana como extranjero",
-    excerpt:
-      "Títulos, impuestos y financiamiento: lo que debes saber antes de firmar.",
-    image: "/assets/props/dest-lasterrenas.jpg",
-  },
-  {
-    tag: "Mercado",
-    title: "Santo Domingo: los sectores con mayor demanda en 2026",
-    excerpt:
-      "Piantini, Cacicazgos y Bella Vista lideran las búsquedas de compradores.",
-    image: "/assets/props/dest-casadecampo.jpg",
-  },
-];
