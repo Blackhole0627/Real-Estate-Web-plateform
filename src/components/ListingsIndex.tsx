@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { listings, listingCover, type Listing } from "@/data/listings";
 import type { PropertyStatus } from "@/data/properties";
+import NewBadge from "./NewBadge";
 
 const FILTERS: { key: PropertyStatus | "Todas"; label: string }[] = [
   { key: "Todas", label: "Todas" },
@@ -27,6 +28,7 @@ function Card({ l }: { l: Listing }) {
     <Link className="p-card reveal in" href={`/propiedades/${l.slug}`}>
       <div className="p-ph">
         <span className="p-st">{l.status}</span>
+        <NewBadge listedAt={l.listedAt} />
         <Image
           src={listingCover(l)}
           alt={`${l.name}, ${l.location}`}

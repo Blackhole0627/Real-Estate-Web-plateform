@@ -1356,6 +1356,25 @@ footer.site {
   margin-bottom: 16px;
   border: 1px solid var(--rule);
 }
+.p-new {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  margin-bottom: 16px;
+  vertical-align: top;
+}
+.p-ph .p-new {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  margin: 0;
+}
 .l-title {
   font-family: var(--serif);
   font-weight: 500;

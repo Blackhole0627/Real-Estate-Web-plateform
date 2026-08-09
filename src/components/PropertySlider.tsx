@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { properties } from "@/data/properties";
+import { listingCover, listingsByNewest } from "@/data/listings";
+import NewBadge from "./NewBadge";
 import { useCarousel } from "./useCarousel";
 import { ArrowLeft, ArrowRight } from "./icons";
 
+const featured = listingsByNewest().slice(0, 6);
+
 export default function PropertySlider() {
-  const { next, prev, trackStyle } = useCarousel(properties.length);
+  const { next, prev, trackStyle } = useCarousel(featured.length);
 
   return (
     <section className="band" id="props">
@@ -28,12 +31,17 @@ export default function PropertySlider() {
         </div>
         <div className="p-view reveal">
           <div className="p-track" style={trackStyle}>
-            {properties.map((p) => (
-              <Link className="p-card" href={`/propiedades/${p.slug}`} key={p.slug}>
+            {featured.map((p) => (
+              <Link
+                className="p-card"
+                href={`/propiedades/${p.slug}`}
+                key={p.slug}
+              >
                 <div className="p-ph">
                   <span className="p-st">{p.status}</span>
+                  <NewBadge listedAt={p.listedAt} />
                   <Image
-                    src={p.image}
+                    src={listingCover(p)}
                     alt={`${p.name}, ${p.location}`}
                     fill
                     sizes="(max-width:640px) 100vw, (max-width:1000px) 50vw, 33vw"

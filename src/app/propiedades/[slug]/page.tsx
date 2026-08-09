@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GalleryGrid from "@/components/GalleryGrid";
+import NewBadge from "@/components/NewBadge";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { site, waLink } from "@/data/site";
 import {
@@ -124,7 +125,8 @@ export default async function ListingPage(
               <Link className="l-back" href="/propiedades">
                 ← Todas las propiedades
               </Link>
-              <span className="p-st l-st">{l.status}</span>
+              <span className="p-st l-st">{l.status}</span>{" "}
+              <NewBadge listedAt={l.listedAt} />
               <h1 className="l-title">{l.name}</h1>
               <p className="l-loc">{l.location}</p>
               <Body text={l.body} />

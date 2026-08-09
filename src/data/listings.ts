@@ -15,6 +15,11 @@ export interface Listing {
   /** Optional curated cover image; defaults to photo 1. */
   cover?: string;
   /**
+   * Date the property was listed (yyyy-mm-dd). Set it on every new listing:
+   * it shows a "Nuevo" badge for 30 days and drives newest-first ordering.
+   */
+  listedAt?: string;
+  /**
    * Client-provided description. Light markup:
    * "## " heading · "- " bullet · blank line = paragraph break.
    */
@@ -409,6 +414,7 @@ Vivir frente al Parque Iberoamérica significa disfrutar diariamente de uno de l
     specs: "3 hab · 4 baños · 190 m² · 2 niveles",
     location: "Juan Dolio",
     photos: 9,
+    listedAt: "2026-08-08",
     body: `Una propiedad pensada para disfrutar de amplitud, privacidad y el estilo de vida de Juan Dolio.
 
 Este penthouse de dos niveles ofrece una distribución funcional y un atractivo diferencial: cada piso cuenta con entrada independiente, brindando mayor privacidad y versatilidad en el uso de los espacios.
@@ -713,6 +719,18 @@ Precio de venta: US$30 por m².`,
 
 export function getListing(slug: string): Listing | undefined {
   return listings.find((l) => l.slug === slug);
+}
+
+/** Dated listings first (newest to oldest), then the rest in curated order. */
+export function listingsByNewest(): Listing[] {
+  return listings
+    .map((l, i) => ({ l, i }))
+    .sort((a, b) => {
+      const da = a.l.listedAt ? +new Date(a.l.listedAt) : -1;
+      const db = b.l.listedAt ? +new Date(b.l.listedAt) : -1;
+      return db - da || a.i - b.i;
+    })
+    .map((x) => x.l);
 }
 
 export function listingCover(l: Listing): string {
