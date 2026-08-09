@@ -402,6 +402,32 @@ Vivir frente al Parque Iberoamérica significa disfrutar diariamente de uno de l
 - Seguridad 24/7 · acceso controlado`,
   },
   {
+    slug: "penthouse-juan-dolio",
+    name: "Penthouse en Juan Dolio",
+    status: "En venta",
+    price: "US$ 245,000",
+    specs: "3 hab · 4 baños · 190 m² · 2 niveles",
+    location: "Juan Dolio",
+    photos: 9,
+    body: `Una propiedad pensada para disfrutar de amplitud, privacidad y el estilo de vida de Juan Dolio.
+
+Este penthouse de dos niveles ofrece una distribución funcional y un atractivo diferencial: cada piso cuenta con entrada independiente, brindando mayor privacidad y versatilidad en el uso de los espacios.
+
+## Características
+
+- 190 m²
+- 2 niveles
+- 3 habitaciones
+- 4 baños
+- Balcón
+- Amplia terraza
+- Área de lavado
+- Entrada independiente en cada nivel
+- Se vende sin amueblar
+
+Una excelente opción como residencia, segunda vivienda o propiedad de inversión en Juan Dolio.`,
+  },
+  {
     slug: "residencial-soraya-i",
     name: "Residencial Soraya I",
     status: "Obra nueva",
