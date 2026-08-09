@@ -84,7 +84,7 @@ export default function Header({ solid = false }: { solid?: boolean }) {
     <>
       <header className={`hd${on ? " stuck" : ""}`}>
         <div className="wrap hd-in">
-          <Link href="/" className="brand" aria-label={site.name}>
+          <Link href="/#top" className="brand" aria-label={site.name}>
             <Image
               src={on ? "/assets/logo-black.png" : "/assets/logo-white.png"}
               alt={site.name}
