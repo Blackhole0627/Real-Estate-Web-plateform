@@ -1,16 +1,16 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { testimonials } from "@/data/content";
+import type { Testimonial } from "@/data/content";
 import { ArrowLeft, ArrowRight } from "./icons";
 
 const PAGE_SIZE = 6;
 
-export default function TestimonialsList() {
+export default function TestimonialsList({ items }: { items: Testimonial[] }) {
   const [page, setPage] = useState(0);
   const topRef = useRef<HTMLDivElement>(null);
-  const pages = Math.ceil(testimonials.length / PAGE_SIZE);
-  const shown = testimonials.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+  const pages = Math.ceil(items.length / PAGE_SIZE);
+  const shown = items.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
   const go = (p: number) => {
     setPage(Math.min(pages - 1, Math.max(0, p)));

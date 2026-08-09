@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { testimonials } from "@/data/content";
+import type { Testimonial } from "@/data/content";
 import { ArrowLeft, ArrowRight } from "./icons";
 
-export default function Testimonials() {
+export default function Testimonials({ items }: { items: Testimonial[] }) {
   const [i, setI] = useState(0);
-  const n = testimonials.length;
+  const n = items.length;
   const next = () => setI((v) => (v + 1) % n);
   const prev = () => setI((v) => (v - 1 + n) % n);
 
@@ -20,7 +20,7 @@ export default function Testimonials() {
         </div>
 
         <div className="t2-stage reveal" aria-live="polite">
-          {testimonials.map((t, k) => {
+          {items.map((t, k) => {
             const off = (((k - i) % n) + n) % n;
             const pos =
               off === 0

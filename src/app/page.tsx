@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Reveal from "@/components/Reveal";
 import { site } from "@/data/site";
+import { getFeaturedListings, getTestimonials } from "@/lib/repo";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -25,15 +26,19 @@ const jsonLd = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const [featured, testimonials] = await Promise.all([
+    getFeaturedListings(6),
+    getTestimonials(),
+  ]);
   return (
     <>
       <Header />
       <main>
         <Hero />
         <StatBand />
-        <Testimonials />
-        <PropertySlider />
+        <Testimonials items={testimonials} />
+        <PropertySlider featured={featured} />
         <SplitCta />
         <ValuationBand />
         <Articles />

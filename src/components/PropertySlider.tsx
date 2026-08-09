@@ -2,14 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { listingCover, listingsByNewest } from "@/data/listings";
+import { listingCover, type Listing } from "@/data/listings";
 import NewBadge from "./NewBadge";
 import { useCarousel } from "./useCarousel";
 import { ArrowLeft, ArrowRight } from "./icons";
 
-const featured = listingsByNewest().slice(0, 6);
-
-export default function PropertySlider() {
+export default function PropertySlider({ featured }: { featured: Listing[] }) {
   const { next, prev, trackStyle } = useCarousel(featured.length);
 
   return (

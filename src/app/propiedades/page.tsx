@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ListingsIndex from "@/components/ListingsIndex";
+import { getListings } from "@/lib/repo";
 
 export const metadata: Metadata = {
   title: "Propiedades",
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/propiedades" },
 };
 
-export default function PropiedadesPage() {
+export default async function PropiedadesPage() {
+  const listings = await getListings();
   return (
     <>
       <Header solid />
@@ -29,7 +31,7 @@ export default function PropiedadesPage() {
         </section>
         <section className="band tight">
           <Suspense fallback={null}>
-            <ListingsIndex />
+            <ListingsIndex listings={listings} />
           </Suspense>
         </section>
       </main>

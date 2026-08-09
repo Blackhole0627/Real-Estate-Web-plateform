@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getArticles } from "@/lib/news";
+import { getArticles } from "@/lib/repo";
 
-export default function Articles() {
-  const latest = getArticles().slice(0, 3);
+export default async function Articles() {
+  const latest = (await getArticles()).slice(0, 3);
   return (
     <section className="band" id="blog">
       <div className="wrap">

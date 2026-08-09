@@ -6,6 +6,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Reveal from "@/components/Reveal";
 import TestimonialsList from "@/components/TestimonialsList";
 import { site, waLink } from "@/data/site";
+import { getTestimonials } from "@/lib/repo";
 
 export const metadata: Metadata = {
   title: "Testimonios",
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/testimonios" },
 };
 
-export default function TestimoniosPage() {
+export default async function TestimoniosPage() {
+  const items = await getTestimonials();
   return (
     <>
       <Header />
@@ -40,7 +42,7 @@ export default function TestimoniosPage() {
         </section>
 
         <section className="band tight">
-          <TestimonialsList />
+          <TestimonialsList items={items} />
         </section>
 
         <section className="band tight n-cta">

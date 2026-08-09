@@ -1,9 +1,12 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/data/site";
-import { listings } from "@/data/listings";
-import { NEWS } from "@/lib/news";
+import { getArticles, getListings } from "@/lib/repo";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [listings, articles] = await Promise.all([
+    getListings(),
+    getArticles(),
+  ]);
   return [
     { url: site.url, changeFrequency: "weekly", priority: 1 },
     { url: `${site.url}/propiedades`, changeFrequency: "weekly", priority: 0.9 },
@@ -19,8 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     { url: `${site.url}/actualidad`, changeFrequency: "weekly", priority: 0.8 },
-    ...NEWS.map((n) => ({
-      url: `${site.url}/actualidad/${n.slug}`,
+    ...articles.map((a) => ({
+      url: `${site.url}/actualidad/${a.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

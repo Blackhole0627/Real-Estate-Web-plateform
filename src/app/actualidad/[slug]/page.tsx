@@ -6,17 +6,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { site, waLink } from "@/data/site";
-import { getArticle, getArticles, NEWS } from "@/lib/news";
+import { getArticleBySlug, getArticles } from "@/lib/repo";
 
-export function generateStaticParams() {
-  return NEWS.map((n) => ({ slug: n.slug }));
+export async function generateStaticParams() {
+  return (await getArticles()).map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata(
   props: PageProps<"/actualidad/[slug]">,
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const a = getArticle(slug);
+  const a = await getArticleBySlug(slug);
   if (!a) return { title: "Actualidad" };
   const description =
     a.lede.length > 155 ? `${a.lede.slice(0, 152)}…` : a.lede;
@@ -37,10 +37,10 @@ export default async function ArticlePage(
   props: PageProps<"/actualidad/[slug]">,
 ) {
   const { slug } = await props.params;
-  const a = getArticle(slug);
+  const a = await getArticleBySlug(slug);
   if (!a) notFound();
 
-  const others = getArticles()
+  const others = (await getArticles())
     .filter((x) => x.slug !== a.slug)
     .slice(0, 3);
 

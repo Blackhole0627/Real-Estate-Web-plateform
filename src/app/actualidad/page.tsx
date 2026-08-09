@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Reveal from "@/components/Reveal";
-import { getArticles } from "@/lib/news";
+import { getArticles } from "@/lib/repo";
 
 export const metadata: Metadata = {
   title: "Actualidad",
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/actualidad" },
 };
 
-export default function ActualidadPage() {
-  const articles = getArticles();
+export default async function ActualidadPage() {
+  const articles = await getArticles();
   return (
     <>
       <Header solid />

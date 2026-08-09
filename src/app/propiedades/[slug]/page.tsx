@@ -8,22 +8,18 @@ import GalleryGrid from "@/components/GalleryGrid";
 import NewBadge from "@/components/NewBadge";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { site, waLink } from "@/data/site";
-import {
-  getListing,
-  listingCover,
-  listingPhotos,
-  listings,
-} from "@/data/listings";
+import { listingCover, listingPhotos } from "@/data/listings";
+import { getListingBySlug, getListings } from "@/lib/repo";
 
-export function generateStaticParams() {
-  return listings.map((l) => ({ slug: l.slug }));
+export async function generateStaticParams() {
+  return (await getListings()).map((l) => ({ slug: l.slug }));
 }
 
 export async function generateMetadata(
   props: PageProps<"/propiedades/[slug]">,
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const l = getListing(slug);
+  const l = await getListingBySlug(slug);
   if (!l) return { title: "Propiedad" };
   return {
     title: `${l.name} · ${l.location}`,
@@ -74,7 +70,7 @@ export default async function ListingPage(
   props: PageProps<"/propiedades/[slug]">,
 ) {
   const { slug } = await props.params;
-  const l = getListing(slug);
+  const l = await getListingBySlug(slug);
   if (!l) notFound();
 
   const cover = listingCover(l);

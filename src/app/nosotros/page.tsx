@@ -7,6 +7,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Reveal from "@/components/Reveal";
 import { site, waLink } from "@/data/site";
+import { getTeam } from "@/lib/repo";
 
 export const metadata: Metadata = {
   title: "Nosotros",
@@ -15,30 +16,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/nosotros" },
 };
 
-const team = [
-  {
-    name: "Franciel Ortega",
-    role: "Asesor y Fundador",
-    photo: "/assets/franciel-ortega.jpg",
-  },
-  {
-    name: "Jadielis Alcántara",
-    role: "Consultora Inmobiliaria",
-    photo: "/assets/jadielis-alcantara.png",
-  },
-  {
-    name: "Sergio Javier",
-    role: "Consultor Inmobiliario",
-    photo: "/assets/sergio-javier.jpg",
-  },
-  {
-    name: "Eddy Richarson",
-    role: "Consultor Inmobiliario",
-    photo: "/assets/eddy-richarson.jpg",
-  },
-];
-
-export default function NosotrosPage() {
+export default async function NosotrosPage() {
+  const team = await getTeam();
   return (
     <>
       <Header />

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { listings, listingCover, type Listing } from "@/data/listings";
+import { listingCover, type Listing } from "@/data/listings";
 import type { PropertyStatus } from "@/data/properties";
 import NewBadge from "./NewBadge";
 
@@ -52,7 +52,7 @@ function Card({ l }: { l: Listing }) {
   );
 }
 
-export default function ListingsIndex() {
+export default function ListingsIndex({ listings }: { listings: Listing[] }) {
   const searchParams = useSearchParams();
   const [filter, setFilter] = useState<PropertyStatus | "Todas">("Todas");
   const [q, setQ] = useState(searchParams.get("q") ?? "");
