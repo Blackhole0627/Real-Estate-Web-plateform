@@ -12,7 +12,7 @@ export default function ValuationBand() {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!nombre.trim() || !tel.trim() || !sector.trim()) return;
-    const msg = `Hola Onker Home, quiero una valoración de mi propiedad.\nNombre: ${nombre.trim()}\nTeléfono: ${tel.trim()}\nInmueble: ${tipo} en ${sector.trim()}`;
+    const msg = `Hola Onker Home, quiero vender mi propiedad.\nNombre: ${nombre.trim()}\nTeléfono: ${tel.trim()}\nInmueble: ${tipo} en ${sector.trim()}`;
     window.open(waLink(msg), "_blank");
   };
 
@@ -23,10 +23,9 @@ export default function ValuationBand() {
           <span className="eyebrow" style={{ color: "#8f8f8f" }}>
             Propietarios
           </span>
-          <h2 style={{ marginTop: 16 }}>¿Cuánto vale tu propiedad?</h2>
+          <h2 style={{ marginTop: 16 }}>Vende tu propiedad</h2>
           <p className="sub" style={{ marginTop: 16 }}>
-            Solicita una valoración sin compromiso. Un asesor de Onker Home te
-            contactará con un análisis del mercado en tu zona.
+            Conoce su valor de mercado y recibe asesoría para venderla.
           </p>
         </div>
         <form className="reveal" onSubmit={submit}>
@@ -67,10 +66,10 @@ export default function ValuationBand() {
             <option>Solar / Terreno</option>
             <option>Local comercial</option>
           </select>
-          <button type="submit">Solicitar valoración</button>
+          <button type="submit">Quiero vender mi propiedad</button>
           <small>
-            Al enviar, un asesor te contactará por WhatsApp o llamada. Sin costo
-            ni compromiso.
+            Al enviar, un asesor inmobiliario te contactará por WhatsApp o
+            llamada. Sin costo ni compromiso.
           </small>
         </form>
       </div>

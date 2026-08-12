@@ -25,40 +25,14 @@ const links = [
   { href: "/#footer", label: "Contacto" },
 ];
 
-const menuGroups = [
-  {
-    title: "Propiedades",
-    links: [
-      { href: "/propiedades", label: "Residencias destacadas" },
-      { href: "/propiedades", label: "Obra nueva" },
-      { href: "/propiedades", label: "En alquiler" },
-    ],
-  },
-  {
-    title: "Comprar",
-    links: [
-      { href: "/propiedades", label: "Explorar propiedades" },
-      { href: "/#split", label: "Asesoría de compra" },
-    ],
-  },
-  {
-    title: "Vender",
-    links: [
-      { href: "/#valorar", label: "Valora tu propiedad" },
-      { href: "/#split", label: "Marketing digital" },
-    ],
-  },
-  {
-    title: "Nosotros",
-    links: [
-      { href: "/nosotros", label: "Nuestra historia" },
-      { href: "/nosotros#equipo", label: "Nuestro equipo" },
-      { href: "/testimonios", label: "Testimonios" },
-      { href: "/actualidad", label: "Actualidad" },
-      { href: "/#join", label: "Únete a la red" },
-      { href: "/#footer", label: "Contacto" },
-    ],
-  },
+const menuLinks = [
+  { href: "/propiedades?f=venta", label: "Comprar" },
+  { href: "/propiedades?f=alquiler", label: "Alquilar" },
+  { href: "/propiedades?f=obra", label: "Proyectos en construcción" },
+  { href: "/#valorar", label: "Vender mi propiedad" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/actualidad", label: "Noticias" },
+  { href: "/#footer", label: "Contacto" },
 ];
 
 export default function Header({ solid = false }: { solid?: boolean }) {
@@ -127,16 +101,11 @@ export default function Header({ solid = false }: { solid?: boolean }) {
           </button>
         </div>
         <div className="wrap mob-body">
-          <nav className="mob-grid" aria-label="Menú">
-            {menuGroups.map((g) => (
-              <div className="mg" key={g.title}>
-                <div className="mg-t">{g.title}</div>
-                {g.links.map((l) => (
-                  <a key={l.label} href={l.href} onClick={() => setOpen(false)}>
-                    {l.label}
-                  </a>
-                ))}
-              </div>
+          <nav className="mob-list" aria-label="Menú">
+            {menuLinks.map((l) => (
+              <a key={l.label} href={l.href} onClick={() => setOpen(false)}>
+                {l.label}
+              </a>
             ))}
           </nav>
           <hr className="mob-rule" />

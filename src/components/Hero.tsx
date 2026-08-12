@@ -23,11 +23,11 @@ export default function Hero() {
           Inmobiliaria boutique · República Dominicana
         </span>
         <h1>
-          Bienes raíces de lujo, <br />
-          con atención de primera.
+          Encuentra tu <br />
+          próxima propiedad
         </h1>
         <p>
-          Compra, alquila, vende e invierte en las mejores zonas de República
+          Compra, alquila o invierte en propiedades seleccionadas en República
           Dominicana.
         </p>
         <form className="hsearch" action="/propiedades">

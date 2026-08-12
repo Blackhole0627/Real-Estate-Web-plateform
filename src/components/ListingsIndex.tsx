@@ -52,9 +52,17 @@ function Card({ l }: { l: Listing }) {
   );
 }
 
+const FILTER_PARAM: Record<string, PropertyStatus> = {
+  venta: "En venta",
+  alquiler: "En alquiler",
+  obra: "Obra nueva",
+};
+
 export default function ListingsIndex({ listings }: { listings: Listing[] }) {
   const searchParams = useSearchParams();
-  const [filter, setFilter] = useState<PropertyStatus | "Todas">("Todas");
+  const [filter, setFilter] = useState<PropertyStatus | "Todas">(
+    FILTER_PARAM[searchParams.get("f") ?? ""] ?? "Todas",
+  );
   const [q, setQ] = useState(searchParams.get("q") ?? "");
 
   const needle = norm(q.trim());
