@@ -630,6 +630,40 @@ La operación incluye la venta del proyecto junto con la empresa desarrolladora,
 Solicita el dossier completo, planos, documentación legal y avance de obra.`,
   },
   {
+    slug: "estacion-combustible-en-venta",
+    name: "Estación de combustible en operación",
+    status: "En venta",
+    price: "US$ 3,750,000",
+    specs: "50,000 gal/mes · food shop · +5,000 m²",
+    location: "República Dominicana",
+    photos: 1,
+    body: `Excelente oportunidad de inversión en una estación de combustible moderna, rentable y actualmente en funcionamiento, ubicada en una zona estratégica de la República Dominicana con alto potencial de crecimiento comercial.
+
+Con apenas 19 meses de construida y operando, esta propiedad combina la venta de combustibles con un food shop de alto movimiento, generando distintas fuentes de ingresos dentro de una misma operación.
+
+La estación registra un volumen aproximado de 50,000 galones mensuales, comercializados íntegramente a través de surtidores, y mantiene un contrato de suministro con un beneficio de RD$13 por galón, al cual le restan aproximadamente 13.5 años de vigencia.
+
+El food shop complementa la operación con ventas mensuales estimadas entre RD$2.3 millones y RD$2.5 millones, fortaleciendo el flujo comercial y la rentabilidad del negocio.
+
+La propiedad cuenta con una superficie superior a 5,000 m², con la posibilidad de incorporar aproximadamente 2,000 m² adicionales actualmente en negociación, ofreciendo espacio para futuras ampliaciones, nuevos servicios o desarrollos comerciales complementarios.
+
+## Características principales
+
+- Estación moderna con solo 19 meses de operación
+- Volumen aproximado de 50,000 galones mensuales
+- Venta de combustible totalmente por surtidores
+- Beneficio contractual de RD$13 por galón
+- Aproximadamente 13.5 años restantes de contrato
+- Food shop con ventas mensuales entre RD$2.3 y RD$2.5 millones
+- Más de 5,000 m² de terreno
+- Posibilidad de integrar unos 2,000 m² adicionales
+- Negocio establecido, operativo y con potencial de expansión
+
+Por razones de confidencialidad, la ubicación exacta, los estados financieros y demás informaciones sensibles serán suministrados únicamente a compradores debidamente calificados.
+
+Una inversión comercial con operación activa, contrato vigente y múltiples fuentes de ingresos en el creciente mercado de combustibles de la República Dominicana.`,
+  },
+  {
     slug: "hotel-la-tambora-samana",
     name: "La Tambora · Activo turístico híbrido",
     status: "En venta",
@@ -655,6 +689,43 @@ Solicita el dossier completo, planos, documentación legal y avance de obra.`,
 En mercados comparables como Cosón o Las Terrenas, activos similares ya superan los US$250/m².
 
 No es un hotel: es arbitraje inmobiliario inteligente, en uno de los destinos con mayor demanda del Caribe.`,
+  },
+  {
+    slug: "terreno-bavaro-punta-cana",
+    name: "Terreno con máster plan · Bávaro–Punta Cana",
+    status: "En venta",
+    price: "US$ 18,000,000",
+    specs: "250,000 m² · máster plan aprobado · US$72/m²",
+    location: "Bávaro–Punta Cana",
+    photos: 1,
+    body: `Excepcional oportunidad de inversión y desarrollo inmobiliario en Bávaro–Punta Cana, uno de los destinos turísticos y residenciales de mayor proyección de la República Dominicana.
+
+Este importante terreno cuenta con una superficie aproximada de 250,000 m² y una ubicación privilegiada frente a la Autovía/Boulevard Turístico del Este, ofreciendo alta visibilidad, excelente conectividad y condiciones favorables para desarrollar un proyecto residencial, turístico o de uso mixto a gran escala.
+
+La propiedad se encuentra a solo 2.538 km de una de las playas más hermosas de Bávaro, aproximadamente 5 minutos en vehículo. Esta cercanía al mar incrementa significativamente su atractivo para el desarrollo de proyectos orientados al turismo, la residencia vacacional y la inversión inmobiliaria.
+
+La propiedad dispone de un máster plan definido y aprobado, organizado en seis etapas de desarrollo. Además, ya se han ejecutado importantes trabajos preliminares de infraestructura, lo que representa una ventaja estratégica para inversionistas y desarrolladores interesados en optimizar los tiempos de ejecución.
+
+## Características principales
+
+- Superficie aproximada de 250,000 m²
+- Ubicación estratégica en Bávaro–Punta Cana
+- Frente a la Autovía/Boulevard Turístico del Este
+- A solo 2.538 km de una de las playas más atractivas de Bávaro
+- Máster plan aprobado y estructurado en seis etapas
+- Propiedad delimitada con muros de bloques
+- Movimiento de tierra parcialmente ejecutado
+- Parte del cableado y del sistema de drenaje instalada
+- Documentación y estatus disponibles ante las instituciones correspondientes
+- Potencial para desarrollo residencial, turístico o de uso mixto
+
+## Oportunidad de inversión
+
+El inmueble cuenta con una tasación aproximada de US$32,000,000 y se ofrece actualmente por US$18,000,000 negociables, equivalente a unos US$72 por m².
+
+Esta diferencia frente al valor tasado, combinada con su extensión, cercanía a la playa, infraestructura adelantada y planificación aprobada, convierte la propiedad en una atractiva oportunidad para desarrolladores, fondos de inversión y grupos empresariales que buscan adquirir tierra con alto potencial de valorización en Punta Cana.
+
+La ubicación exacta, el expediente técnico, la tasación, el máster plan y las documentaciones correspondientes serán presentados a compradores o inversionistas debidamente calificados.`,
   },
   {
     slug: "terreno-la-romana",
