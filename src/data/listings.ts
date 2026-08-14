@@ -351,6 +351,44 @@ Con capacidad para alojar cómodamente hasta ocho personas, es una excelente opc
 - Seguridad y acceso controlado`,
   },
   {
+    slug: "apartamento-la-esperilla-vista-mar",
+    name: "Apartamento con vista al mar en La Esperilla",
+    status: "En venta",
+    price: "US$ 415,000",
+    specs: "3 hab · 3.5 baños · 202 m² · piso 4",
+    location: "La Esperilla, Santo Domingo",
+    photos: 28,
+    listedAt: "2026-08-14",
+    body: `Amplio apartamento en venta en La Esperilla, ubicado en el cuarto piso de una exclusiva torre residencial. Su terraza balcón se extiende desde la habitación principal hasta la sala, ofreciendo una agradable vista al mar y excelente iluminación natural.
+
+## Distribución
+
+- Sala y comedor
+- Terraza balcón
+- Tres habitaciones, cada una con baño privado
+- Medio baño para visitas
+- Cocina
+- Área de lavado
+- Habitación de servicio con baño
+- Locker de gran tamaño en el primer nivel
+- Tres parqueos
+
+## Amenidades de la torre
+
+- Recepción de lujo
+- Tres ascensores KONE
+- Doce parqueos para visitantes
+- Gazebo con amplia terraza para actividades
+- Área de juegos
+- Cámaras de seguridad
+- Vigilancia permanente
+- Planta eléctrica de cobertura completa
+- Gas común
+- Ducto de basura
+
+Una excelente oportunidad para adquirir un apartamento espacioso con vista al mar, tres parqueos y una ubicación privilegiada en La Esperilla, Santo Domingo.`,
+  },
+  {
     slug: "apartamento-terraza-300",
     name: "Apartamento con terraza privada",
     status: "En venta",
@@ -432,6 +470,115 @@ Este penthouse de dos niveles ofrece una distribución funcional y un atractivo 
 - Se vende sin amueblar
 
 Una excelente opción como residencia, segunda vivienda o propiedad de inversión en Juan Dolio.`,
+  },
+  {
+    slug: "apartamentos-piantini-poligono",
+    name: "Apartamentos en Piantini",
+    status: "Obra nueva",
+    pricePrefix: "Desde",
+    price: "US$ 244,703",
+    specs: "Torre de uso mixto · Polígono Central",
+    location: "Piantini, Santo Domingo",
+    photos: 17,
+    listedAt: "2026-08-14",
+    body: `Innovador proyecto de apartamentos en venta en Piantini, ubicado entre las calles David Ben Gurion y Federico Geraldino, en el corazón del Polígono Central de Santo Domingo.
+
+La torre integra áreas residenciales, comerciales y sociales dentro de una propuesta arquitectónica moderna, con más de 500 m² destinados al uso peatonal y espacios diseñados para ofrecer comodidad, entretenimiento y una experiencia urbana completa.
+
+Precios desde US$244,703 hasta US$540,656.
+
+## Amenidades
+
+- Piscina
+- Gimnasio
+- Lounge bar
+- Coworking
+- Coffee shop
+- Terraza abierta
+- Asoleadero húmedo
+- Área de juegos para niños
+- Club para adolescentes
+- Jardines
+- Lobbies independientes
+- Áreas comerciales
+- Lockers
+- Estar para choferes
+- Estacionamientos
+- Escaleras de emergencia
+
+## Forma de pago
+
+- Reserva: US$5,000
+- Firma del contrato: 20%
+- Durante la construcción: 40%
+- Contra entrega: 40%
+
+Una atractiva oportunidad para adquirir un apartamento en Piantini, con amenidades modernas, ubicación estratégica y fácil acceso a restaurantes, comercios, oficinas y servicios del centro de Santo Domingo.`,
+  },
+  {
+    slug: "apartamento-bella-vista-nuevo",
+    name: "Apartamento a estrenar en Bella Vista",
+    status: "En venta",
+    price: "US$ 187,000",
+    specs: "2 hab · 2.5 baños · 82 m² · a estrenar",
+    location: "Bella Vista, Santo Domingo",
+    photos: 12,
+    cover: "/assets/listings/apartamento-bella-vista-nuevo/6.jpg",
+    listedAt: "2026-08-14",
+    body: `Moderno apartamento en venta en Bella Vista, ubicado en el cuarto piso de una torre nueva. Su distribución funcional integra cómodamente la sala, el comedor y la cocina, convirtiéndolo en una excelente opción para vivir o invertir en Santo Domingo.
+
+## Distribución
+
+- Sala y comedor
+- Cocina
+- Dos habitaciones
+- Dos baños completos
+- Medio baño para visitas
+- Un parqueo
+- Ascensor
+- Escaleras de emergencia
+
+## Áreas sociales
+
+- Lobby amueblado
+- Terraza con picuzzi
+- Salón para eventos
+- Área de BBQ
+- Gimnasio
+- Área de juegos para niños
+
+Una atractiva oportunidad para adquirir un apartamento a estrenar en Bella Vista, con espacios bien distribuidos, amenidades modernas y una ubicación privilegiada.`,
+  },
+  {
+    slug: "residencial-los-tres-ojos",
+    name: "Apartamentos en Los Tres Ojos",
+    status: "Obra nueva",
+    pricePrefix: "Desde",
+    price: "US$ 139,000",
+    specs: "122–174 m² · solo 12 apartamentos",
+    location: "Los Tres Ojos, Santo Domingo Este",
+    photos: 22,
+    cover: "/assets/listings/residencial-los-tres-ojos/5.jpg",
+    listedAt: "2026-08-14",
+    body: `Exclusivo proyecto residencial de solo 12 apartamentos, diseñado para brindar privacidad, comodidad y espacios amplios.
+
+## Disponibilidad
+
+- 122 m² desde US$139,000
+- 130 m² desde US$153,427.53
+- Último piso: 174 m² + 36 m² de terraza — US$195,677
+
+## Características del proyecto
+
+- Planta eléctrica de cobertura total
+- Lobby climatizado
+- Área social
+- Salón de eventos
+- Área de BBQ
+- Gas común con medidores individuales
+- Parqueos según la unidad
+
+Una excelente oportunidad para vivir o invertir en una zona residencial de Santo Domingo Este.`,
   },
   {
     slug: "residencial-soraya-i",
@@ -633,26 +780,28 @@ Precio de venta: US$30 por m².`,
     priceSuffix: "/mes",
     specs: "2 hab · 2.5 baños · 157 m² · piso 6",
     location: "Piantini, Santo Domingo",
-    photos: 12,
-    body: `Exclusiva torre en Piantini — apartamento amueblado en el sexto piso, con 157 m².
+    photos: 11,
+    body: `Elegante apartamento amueblado en alquiler en Piantini, ubicado en una exclusiva torre residencial. Cuenta con una distribución amplia y funcional, terminaciones de calidad y un cómodo balcón, ideal para quienes buscan vivir en una de las zonas más céntricas y valoradas de Santo Domingo.
 
-## Características del apartamento
+## Distribución
 
-- 2 habitaciones, cada una con su baño de lujo
-- Medio baño de visitas
-- Sala-comedor
-- Cocina
-- Área de lavado amplia
+- Sala y comedor
 - Amplio balcón
+- Cocina
+- Dos habitaciones, cada una con baño privado
+- Medio baño para visitas
 - Habitación de servicio
-- 2 parqueos
+- Área de lavado amplia
+- Dos parqueos
 
 ## Amenidades de la torre
 
+- Lobby climatizado
 - Salón multiuso en el último nivel
 - Gimnasio
-- Lobby climatizado
-- Área de juegos para niños`,
+- Área de juegos para niños
+
+Una excelente opción para alquilar un apartamento amueblado en Piantini, con espacios cómodos, amenidades funcionales y acceso rápido a comercios, restaurantes y servicios.`,
   },
   {
     slug: "apartamento-la-esperilla-alquiler",

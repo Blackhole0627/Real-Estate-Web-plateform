@@ -8,6 +8,15 @@ import path from "path";
  * files in and add one entry here (newest first).
  */
 export const NEWS: { slug: string; category: string }[] = [
+  {
+    slug: "record-turistico-republica-dominicana-inversion",
+    category: "Mercado",
+  },
+  {
+    slug: "estacion-de-combustible-en-venta-republica-dominicana",
+    category: "Inversión",
+  },
+  { slug: "terreno-bavaro-punta-cana-master-plan", category: "Inversión" },
   { slug: "coworking-republica-dominicana-oficinas", category: "Mercado" },
   { slug: "pagos-instantaneos-247-republica-dominicana", category: "Finanzas" },
   { slug: "seguridad-juridica-republica-dominicana", category: "Legal" },
