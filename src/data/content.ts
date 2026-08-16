@@ -5,132 +5,62 @@ export interface Testimonial {
   tag: string;
 }
 
-/** Sample testimonials — replace with the client's real quotes before launch. */
+/** Real client testimonials provided by Onker Home (2026-08-16). */
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Compramos nuestro apartamento en La Esperilla desde el extranjero. Vivimos en Nueva York y teníamos miedo de manejar todo a distancia: los documentos, el título, las transferencias. El equipo nos acompañó por videollamada en cada visita, nos explicó cada paso legal con paciencia y nos envió todo firmado digitalmente. Cuando llegamos a Santo Domingo, las llaves nos esperaban. El acompañamiento fue impecable de principio a fin.",
-    initials: "MR",
-    name: "M. Rodríguez",
-    tag: "Compra · Santo Domingo",
+      "Hemos trabajado con Onker Home en varias ocasiones y siempre hemos obtenido excelentes resultados. Nos han ayudado a vender varios inmuebles en tiempo récord. ¡Totalmente recomendados!",
+    initials: "LP",
+    name: "Laura Mixell Pérez",
+    tag: "Venta",
   },
   {
     quote:
-      "Vendieron nuestra villa en tiempo récord y al precio correcto. Comunicación clara en todo momento.",
-    initials: "JP",
-    name: "J. Peralta",
-    tag: "Venta · Las Terrenas",
+      "Adquirí mi primera propiedad con Onker Home y me asesoraron de principio a fin. Hicieron que todo el proceso fuera sencillo y seguro. Comprar nunca había sido tan fácil.",
+    initials: "EL",
+    name: "Emmanuel Linares",
+    tag: "Compra",
   },
   {
     quote:
-      "Como inversionista extranjero, necesitaba un equipo de confianza en el país. Evalué varias inmobiliarias antes de decidirme, y la diferencia con Onker Home fue evidente desde la primera llamada: números reales, proyecciones honestas de rentabilidad y cero presión. Me ayudaron a estructurar la compra de dos unidades en Cap Cana y hoy ambas están rentadas. Superaron mis expectativas.",
-    initials: "AL",
-    name: "A. Lombardi",
-    tag: "Inversión · Cap Cana",
+      "He comprado y vendido propiedades con Onker Home y mi experiencia siempre ha sido excelente. Valoro mucho su atención, compromiso y acompañamiento durante todo el proceso.",
+    initials: "SM",
+    name: "Sulema Montes de Oca",
+    tag: "Compra y venta",
   },
   {
     quote:
-      "Alquilamos en Piantini en menos de una semana. Proceso simple, digital y sin sorpresas.",
-    initials: "KG",
-    name: "K. García",
-    tag: "Alquiler · Piantini",
+      "He vendido dos inmuebles con Onker Home en un tiempo impresionante. Más que vender, se preocupan por brindar una excelente experiencia y acompañarte en cada paso. ¡Los recomiendo!",
+    initials: "JE",
+    name: "José Emmanuel J.",
+    tag: "Venta",
   },
   {
     quote:
-      "Atención de primera y conocimiento real del mercado dominicano. Los recomiendo sin dudarlo.",
-    initials: "SD",
-    name: "S. Durán",
-    tag: "Compra · Bella Vista",
+      "He rentado con Onker Home en varias ocasiones y siempre he recibido un excelente servicio y acompañamiento. Son atentos, eficientes y muy profesionales. Los recomiendo.",
+    initials: "GR",
+    name: "Grace Reyes",
+    tag: "Alquiler",
   },
   {
     quote:
-      "Firmamos el acuerdo de captación desde el teléfono, en minutos. Una inmobiliaria verdaderamente digital.",
-    initials: "FM",
-    name: "F. Medina",
-    tag: "Venta · Cacicazgos",
+      "Lograron rescatar una negociación que prácticamente dábamos por perdida. Su esfuerzo, seguimiento y compromiso hicieron la diferencia. Muy agradecida y satisfecha con el resultado.",
+    initials: "IC",
+    name: "Inés Catano",
+    tag: "Negociación",
   },
   {
     quote:
-      "Heredamos una casa familiar en Santiago que llevaba dos años sin poder venderse con otra inmobiliaria. Onker Home la publicó con fotos y video profesional, ajustó el precio con datos comparables del sector y en seis semanas teníamos tres ofertas serias. Nos guiaron también con el tema de la sucesión y los impuestos. No puedo pedir más.",
-    initials: "RC",
-    name: "R. Cabrera",
-    tag: "Venta · Santiago",
+      "Compré una propiedad con Onker Home y recibí excelentes atenciones. Hicieron que un proceso que parecía complicado se convirtiera en una experiencia sencilla y gratificante.",
+    initials: "VM",
+    name: "Viamna Massiel Martinez",
+    tag: "Compra",
   },
   {
     quote:
-      "Respuesta inmediata por WhatsApp, visitas bien organizadas y honestidad total sobre cada propiedad.",
-    initials: "VN",
-    name: "V. Núñez",
-    tag: "Compra · Naco",
-  },
-  {
-    quote:
-      "Buscábamos una villa para vacacionar y rentar el resto del año. Nos presentaron opciones en Las Terrenas y Puerto Bahía con proyecciones claras de ocupación, y nos conectaron con administradores locales de confianza. Compramos con total tranquilidad desde Madrid.",
-    initials: "CV",
-    name: "C. Valdez",
-    tag: "Inversión · Samaná",
-  },
-  {
-    quote:
-      "Mi primer apartamento. Me explicaron todo el proceso del préstamo hipotecario paso a paso. Eternamente agradecida.",
-    initials: "YT",
-    name: "Y. Taveras",
-    tag: "Compra · Santo Domingo Este",
-  },
-  {
-    quote:
-      "Profesionales serios. El acuerdo se firmó digital, la propiedad se promocionó de verdad y las visitas fueron siempre con compradores calificados, no curiosos.",
-    initials: "GM",
-    name: "G. Martínez",
-    tag: "Venta · Arroyo Hondo",
-  },
-  {
-    quote:
-      "Excelente experiencia de principio a fin. Volveremos a trabajar con ellos.",
-    initials: "PH",
-    name: "P. Hernández",
-    tag: "Alquiler · Juan Dolio",
-  },
-  {
-    quote:
-      "Somos dominicanos viviendo en Suiza y queríamos invertir en nuestro país sin perder el sueño en el intento. Onker Home nos armó una carpeta con cada documento verificado — título, deslinde, cargas — antes de pedirnos un solo peso. Esa transparencia no la habíamos visto en ningún otro lugar. Compramos un solar en La Romana y ya planificamos la construcción.",
-    initials: "EB",
-    name: "E. Bautista",
-    tag: "Inversión · La Romana",
-  },
-  {
-    quote:
-      "Vendí mi apartamento en tres semanas. Marketing digital de verdad: video, redes y compradores reales.",
-    initials: "LF",
-    name: "L. Féliz",
-    tag: "Venta · Evaristo Morales",
-  },
-  {
-    quote:
-      "Nos mudamos desde Miami con dos niños y poco tiempo. Nos organizaron un solo día de visitas con seis propiedades preseleccionadas según nuestra lista — colegio cerca, tres habitaciones, área social para niños. La cuarta fue la elegida. Cerramos en cuarenta y cinco días.",
-    initials: "AS",
-    name: "A. Santana",
-    tag: "Compra · Piantini",
-  },
-  {
-    quote: "Serios, rápidos y humanos. Así de simple.",
-    initials: "JD",
-    name: "J. De la Cruz",
-    tag: "Alquiler · Bella Vista",
-  },
-  {
-    quote:
-      "Después de una mala experiencia con otra agencia, llegué con desconfianza. Me la desarmaron a base de hechos: informes de cada visita, retroalimentación honesta sobre el precio y un comprador serio en dos meses. La diferencia está en cómo trabajan.",
-    initials: "MT",
-    name: "M. Torres",
-    tag: "Venta · Mirador Sur",
-  },
-  {
-    quote:
-      "Compramos un apartamento en planos en Cacicazgos como inversión patrimonial. Nos explicaron el fideicomiso, el cronograma de pagos y los riesgos con una claridad que dio gusto. Recomendados al cien por ciento.",
-    initials: "OG",
-    name: "O. Guzmán",
-    tag: "Obra nueva · Cacicazgos",
+      "Compré una propiedad en Gazcue con Onker Home y continuaron asistiéndome incluso después de la venta. Su acompañamiento realmente marca la diferencia. ¡Gracias, chicos!",
+    initials: "SF",
+    name: "Dra. Silvia Feliz",
+    tag: "Compra · Gazcue",
   },
 ];
-
