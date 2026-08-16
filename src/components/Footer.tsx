@@ -92,6 +92,7 @@ export default function Footer() {
           <Link href="/testimonios">Testimonios</Link>
           <Link href="/actualidad">Actualidad</Link>
           <Link href="/#join">Newsletter</Link>
+          <Link href="/politica-de-privacidad">Política de privacidad</Link>
         </nav>
         <p className="f-copy">
           © 2026 {site.legal} · Todos los derechos reservados

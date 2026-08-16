@@ -414,6 +414,47 @@ Ideal para crear tu espacio social, BBQ o área de relajación.
 Una propiedad única que combina amplitud, privacidad y un espacio exterior difícil de encontrar.`,
   },
   {
+    slug: "apartamento-piantini-2hab",
+    name: "Apartamento de 2 habitaciones en Piantini",
+    status: "En venta",
+    price: "US$ 360,000",
+    specs: "2 hab · 2.5 baños · 156 m²",
+    location: "Piantini, Santo Domingo",
+    photos: 16,
+    listedAt: "2026-08-16",
+    body: `Elegante apartamento ubicado estratégicamente entre las avenidas Winston Churchill y Abraham Lincoln, en una de las zonas más exclusivas y valorizadas de Santo Domingo.
+
+La propiedad cuenta con 156 m², incluyendo sus dos estacionamientos y locker privado. Su distribución moderna y funcional ofrece espacios cómodos, excelente iluminación y la privacidad ideal para vivir o invertir.
+
+## Características del inmueble
+
+- 2 habitaciones con baño privado y walk-in closet
+- Sala
+- Comedor
+- Amplio balcón
+- Cocina
+- Medio baño para visitas
+- Área de lavado
+- Cuarto de servicio
+- 2 estacionamientos
+- Locker privado
+
+## Amenidades
+
+- Piscina
+- Jacuzzi
+- Gimnasio equipado
+- Sauna
+- Salón para eventos
+- Área de BBQ
+- Elegante lobby
+- Seguridad y control de acceso 24/7
+
+Precio de venta: US$360,000 negociables.
+
+Una excelente oportunidad para adquirir una propiedad contemporánea, con ubicación privilegiada y completas amenidades en el corazón de Piantini.`,
+  },
+  {
     slug: "apartamento-la-esperilla-parque",
     name: "Apartamento frente al Parque Iberoamérica",
     status: "En venta",

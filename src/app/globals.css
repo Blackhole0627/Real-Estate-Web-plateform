@@ -1697,6 +1697,21 @@ footer.site {
   font-size: 1.1rem;
   margin: 0;
 }
+.legal-date {
+  color: var(--sec);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  margin: -20px 0 30px;
+}
+.legal-body {
+  padding-bottom: clamp(48px, 8vh, 90px);
+}
+.legal-body h2 {
+  font-size: 1.25rem;
+}
+.legal-body .art-li {
+  margin-bottom: 8px;
+}
 
 /* ---------- BRANDED SPLASH / LOADING ---------- */
 .splash {
