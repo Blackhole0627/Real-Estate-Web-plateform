@@ -9,6 +9,12 @@ import path from "path";
  */
 export const NEWS: { slug: string; category: string }[] = [
   {
+    slug: "fondos-de-inversion-republica-dominicana",
+    category: "Finanzas",
+  },
+  { slug: "cabo-rojo-pedernales-polo-turistico", category: "Mercado" },
+  { slug: "nuevo-codigo-penal-inmobiliarias", category: "Legal" },
+  {
     slug: "record-turistico-republica-dominicana-inversion",
     category: "Mercado",
   },
@@ -50,6 +56,7 @@ export interface Article {
 function isHeading(line: string): boolean {
   if (line.length > 110) return false;
   if (/[.;:,”"»)\]…]$/.test(line)) return false;
+  if (line.includes(" | ")) return false; // byline/label lines
   if (line.endsWith("?")) return line.length <= 90 && !line.startsWith("“");
   return true;
 }

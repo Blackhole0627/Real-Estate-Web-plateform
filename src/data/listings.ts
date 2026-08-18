@@ -455,6 +455,43 @@ Precio de venta: US$360,000 negociables.
 Una excelente oportunidad para adquirir una propiedad contemporánea, con ubicación privilegiada y completas amenidades en el corazón de Piantini.`,
   },
   {
+    slug: "apartamento-la-esperilla-amueblado",
+    name: "Apartamento amueblado en La Esperilla",
+    status: "En venta",
+    price: "US$ 288,000",
+    specs: "3 hab · 3.5 baños · 152 m² · amueblado · piso 9",
+    location: "La Esperilla, Santo Domingo",
+    photos: 9,
+    listedAt: "2026-08-18",
+    body: `Descubre este elegante apartamento totalmente amueblado, ubicado en el noveno piso de una moderna torre en La Esperilla, uno de los sectores más exclusivos, céntricos y valorizados de Santo Domingo.
+
+Con una distribución amplia y funcional, esta propiedad ofrece el equilibrio perfecto entre comodidad, privacidad y ubicación. Se entrega lista para ocupar, convirtiéndose en una excelente alternativa tanto para residencia familiar como para inversión inmobiliaria.
+
+## Características del inmueble
+
+- 152 m²
+- Totalmente amueblado
+- 3 habitaciones
+- 3.5 baños
+- Sala y comedor
+- Cocina
+- Área de lavado
+- Cuarto de servicio
+- Locker privado
+- 2 estacionamientos paralelos en el nivel S1
+- Piso 9
+
+## Amenidades de la torre
+
+- Piscina
+- Gimnasio equipado
+- Sala de cine
+- Sauna
+- Salón para eventos
+- Área de juegos infantiles
+- Lobby`,
+  },
+  {
     slug: "apartamento-la-esperilla-parque",
     name: "Apartamento frente al Parque Iberoamérica",
     status: "En venta",
@@ -827,31 +864,37 @@ Precio de venta: US$30 por m².`,
     slug: "apartamento-bella-vista",
     name: "Apartamento con terraza · Bella Vista",
     status: "En alquiler",
-    price: "US$ 4,300",
+    price: "US$ 4,000",
     priceSuffix: "/mes",
-    specs: "3 hab · 3.5 baños · 300 m²",
+    specs: "3 hab · 3.5 baños · 200 m² + terraza 160 m²",
     location: "Bella Vista, Santo Domingo",
-    photos: 29,
+    photos: 16,
     cover: "/assets/props/prop6.jpg",
-    body: `Descubre este exclusivo apartamento ubicado en una de las zonas más privilegiadas de Bella Vista, diseñado para quienes valoran el confort, la amplitud y una excelente ubicación.
+    body: `Vive con amplitud, privacidad y comodidad en este exclusivo apartamento ubicado en Bella Vista, uno de los sectores residenciales más céntricos y valorados de Santo Domingo.
+
+La propiedad cuenta con espacios interiores generosos y una impresionante terraza privada de 160 m², perfecta para crear diferentes ambientes sociales y disfrutar momentos especiales en familia.
 
 ## Características del apartamento
 
-- 300 m² totales: 200 m² de apartamento + 100 m² de amplia terraza privada
-- Segundo piso
-- 3 habitaciones · 3.5 baños
-- Amplia cocina
-- Sala y comedor
+- 200 m² de construcción interior
+- 160 m² de terraza privada
+- Segundo nivel
+- 3 habitaciones
+- 3.5 baños
+- Amplia sala y comedor
+- Cocina espaciosa
 - Área de lavado
 - Cuarto de servicio con baño
-- 3 parqueos
+- 3 estacionamientos
 
 ## Amenidades de la torre
 
-- Lobby elegante
-- Piscina · gimnasio equipado
-- Salón de eventos · terraza techada
-- Área de juegos para niños
+- Elegante lobby
+- Piscina
+- Gimnasio equipado
+- Salón para eventos
+- Terraza techada
+- Área de juegos infantiles
 - Amplias áreas sociales`,
   },
   {
