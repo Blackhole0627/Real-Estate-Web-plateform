@@ -128,6 +128,36 @@ La residencia dispone de seis suites, todas con baño privado y vestidor, cuatro
 Uno de los residenciales más exclusivos de Playa Bonita, con seguridad privada, jardines tropicales, piscina de 30 metros, cancha de tenis y área de petanca. Desde la propiedad es posible acceder caminando a la playa, al club náutico y a reconocidos restaurantes frente al mar.`,
   },
   {
+    slug: "villa-las-canas-frente-al-mar",
+    name: "Villa frente al mar en Las Canas",
+    status: "En venta",
+    price: "US$ 3,150,000",
+    specs: "4 hab · 4.5 baños · 900 m² · solar 5,717 m²",
+    location: "Las Canas, Costa Norte",
+    photos: 18,
+    listedAt: "2026-08-22",
+    body: `Ubicada en Las Canas, en la costa norte de la República Dominicana, esta impresionante villa frente al mar ofrece una combinación excepcional de privacidad, amplitud y conexión directa con el entorno natural del Caribe.
+
+La propiedad se desarrolla sobre un extraordinario terreno de 5,717 m², con aproximadamente 900 m² de construcción distribuidos en dos niveles. Su ubicación privilegiada permite disfrutar de vistas abiertas al océano, acceso directo a la playa y un ambiente de absoluta tranquilidad rodeado de vegetación tropical.
+
+Los espacios interiores se abren hacia amplias terrazas y áreas exteriores, creando una transición natural entre la residencia, los jardines, la piscina y el océano. En su construcción destacan la piedra coralina, maderas naturales, trabajos artesanales en piedra y detalles decorativos en hierro.
+
+La residencia principal dispone de tres amplias habitaciones. Una cuarta habitación tipo suite, ubicada de manera independiente junto al área de la piscina, proporciona un espacio privado adicional para huéspedes. La propiedad también incorpora dos viviendas independientes destinadas al personal.
+
+## Características
+
+- 5,717 m² de terreno · 900 m² de construcción
+- 4 habitaciones · 4.5 baños · 2 niveles
+- Ubicación frente al mar con acceso directo a la playa
+- Piscina privada · amplias terrazas
+- Vistas al océano y a las montañas
+- Piedra coralina y materiales naturales
+- Aire acondicionado · electricidad 24 horas · seguridad 24/7
+- Suite independiente para huéspedes
+- 2 viviendas independientes para el personal
+- Amplias áreas verdes y vegetación tropical`,
+  },
+  {
     slug: "torre-ocean-view-cacicazgos",
     name: "Torre Ocean View",
     status: "Obra nueva",
@@ -407,36 +437,6 @@ La piscina privada de diseño orgánico está rodeada de piedra coralina, con un
 - Alarma y cámaras con acceso desde el móvil
 - Piedra coralina, techos en madera y tejas españolas
 - A 12 minutos del centro de Cabrera`,
-  },
-  {
-    slug: "villa-las-canas-frente-al-mar",
-    name: "Villa frente al mar en Las Canas",
-    status: "En venta",
-    price: "Precio a consultar",
-    specs: "4 hab · 4.5 baños · 900 m² · solar 5,717 m²",
-    location: "Las Canas, Costa Norte",
-    photos: 18,
-    listedAt: "2026-08-22",
-    body: `Ubicada en Las Canas, en la costa norte de la República Dominicana, esta impresionante villa frente al mar ofrece una combinación excepcional de privacidad, amplitud y conexión directa con el entorno natural del Caribe.
-
-La propiedad se desarrolla sobre un extraordinario terreno de 5,717 m², con aproximadamente 900 m² de construcción distribuidos en dos niveles. Su ubicación privilegiada permite disfrutar de vistas abiertas al océano, acceso directo a la playa y un ambiente de absoluta tranquilidad rodeado de vegetación tropical.
-
-Los espacios interiores se abren hacia amplias terrazas y áreas exteriores, creando una transición natural entre la residencia, los jardines, la piscina y el océano. En su construcción destacan la piedra coralina, maderas naturales, trabajos artesanales en piedra y detalles decorativos en hierro.
-
-La residencia principal dispone de tres amplias habitaciones. Una cuarta habitación tipo suite, ubicada de manera independiente junto al área de la piscina, proporciona un espacio privado adicional para huéspedes. La propiedad también incorpora dos viviendas independientes destinadas al personal.
-
-## Características
-
-- 5,717 m² de terreno · 900 m² de construcción
-- 4 habitaciones · 4.5 baños · 2 niveles
-- Ubicación frente al mar con acceso directo a la playa
-- Piscina privada · amplias terrazas
-- Vistas al océano y a las montañas
-- Piedra coralina y materiales naturales
-- Aire acondicionado · electricidad 24 horas · seguridad 24/7
-- Suite independiente para huéspedes
-- 2 viviendas independientes para el personal
-- Amplias áreas verdes y vegetación tropical`,
   },
   {
     slug: "villa-palmera-xxi",
