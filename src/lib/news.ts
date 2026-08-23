@@ -9,6 +9,20 @@ import path from "path";
  */
 export const NEWS: { slug: string; category: string }[] = [
   {
+    slug: "marriott-executive-apartments-santo-domingo",
+    category: "Mercado",
+  },
+  { slug: "alba-bay-montecristi-ciudad-bienestar", category: "Mercado" },
+  {
+    slug: "jp-morgan-inversiones-republica-dominicana",
+    category: "Economía",
+  },
+  { slug: "viettel-mercado-dominicano", category: "Economía" },
+  {
+    slug: "spacex-starlink-xai-republica-dominicana",
+    category: "Tendencias",
+  },
+  {
     slug: "fondos-de-inversion-republica-dominicana",
     category: "Finanzas",
   },

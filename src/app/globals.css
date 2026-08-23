@@ -898,7 +898,7 @@ h4 {
 .a-ph {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4/2.7;
+  aspect-ratio: 16/9; /* matches the 1600x900 article covers — no crop, embedded text stays readable */
   background: var(--alt);
 }
 .a-ph img {

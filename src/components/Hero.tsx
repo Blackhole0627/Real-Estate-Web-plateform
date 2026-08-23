@@ -1,3 +1,4 @@
+import Link from "next/link";
 import HeroVideo from "./HeroVideo";
 
 /**
@@ -66,10 +67,10 @@ export default function Hero() {
         </div>
       </div>
       <nav className="qlinks" aria-label="Accesos rápidos">
-        <a className="ql" href="#props">
+        <Link className="ql" href="/propiedades?f=venta">
           <span className="t">Propiedades</span>
           <span className="d">Residencias curadas en venta y alquiler</span>
-        </a>
+        </Link>
         <a className="ql" href="#testi">
           <span className="t">Testimonios</span>
           <span className="d">Lo que dicen nuestros clientes</span>

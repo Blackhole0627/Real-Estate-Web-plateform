@@ -186,6 +186,41 @@ Fecha estimada de entrega: 2029.
 - Apartamento 3101 · 622 m² totales · US$2,550,000`,
   },
   {
+    slug: "villa-frente-al-oceano-cabarete",
+    name: "Villa frente al océano en Cabarete",
+    status: "En venta",
+    price: "US$ 1,650,000",
+    specs: "3 hab · 5.5 baños · 547 m² · solar 3,530 m²",
+    location: "Cabarete, Puerto Plata",
+    photos: 27,
+    cover: "/assets/listings/villa-frente-al-oceano-cabarete/14.jpg",
+    listedAt: "2026-08-22",
+    body: `Ubicada frente al océano en la costa norte de la República Dominicana, esta espectacular villa ofrece una experiencia residencial marcada por impresionantes vistas panorámicas, amplios espacios y una arquitectura diseñada para disfrutar plenamente de su privilegiado entorno.
+
+Construida sobre un terreno de 3,530 m² y con aproximadamente 547 m² de construcción distribuidos en dos niveles, la propiedad aprovecha su posición frente al mar para integrar el paisaje, la iluminación natural y la brisa del océano en sus diferentes ambientes.
+
+La villa cuenta con 3 habitaciones y 5.5 baños. Uno de sus elementos arquitectónicos más distintivos es su sala principal de diseño hundido, conocida como sunken living room, un espacio personalizado que se convierte en el punto central para compartir, recibir invitados o disfrutar de las vistas.
+
+Cuenta con sauna privado, piscina de longitud adecuada para nadar y jacuzzi, creando un espacio ideal para relajarse mientras se disfruta del entorno tropical y las vistas al océano.
+
+La villa se encuentra próxima a Cabarete y Sosúa, con fácil conexión hacia el Aeropuerto Internacional Gregorio Luperón de Puerto Plata, y acceso conveniente a restaurantes, comercios, centros educativos y servicios médicos.
+
+## Características
+
+- 547 m² de construcción · terreno de 3,530 m²
+- 3 habitaciones · 5.5 baños · 2 niveles
+- Ubicación frente al océano con vistas panorámicas al mar
+- Piscina privada · jacuzzi · sauna privado
+- Sala principal de diseño hundido
+- Amplias áreas sociales integradas con el exterior
+- Aire acondicionado · electricidad 24 horas
+- Seguridad 24/7 · comunidad cerrada
+- 3 áreas de almacenamiento
+- 2 estacionamientos techados
+- Próxima a Cabarete y Sosúa
+- Fácil acceso al Aeropuerto Internacional Gregorio Luperón`,
+  },
+  {
     slug: "twin-towers-anacaona",
     name: "Twin Towers · Bloque B",
     status: "En venta",
@@ -267,6 +302,141 @@ Fecha estimada de entrega: junio 2029.
 - Unidad 3B · 337.85 m² totales · US$1,010,000
 - Unidad 7A · 348.45 m² totales · US$1,090,000
 - Unidad 11A (Penthouse) · 344.85 m² totales · US$1,165,000`,
+  },
+  {
+    slug: "villa-comunidad-residencial-cabarete",
+    name: "Villa de lujo en comunidad residencial · Cabarete",
+    status: "En venta",
+    price: "US$ 899,000",
+    specs: "4 hab · 5 baños · 450 m² · solar 1,700 m²",
+    location: "Cabarete, Puerto Plata",
+    photos: 17,
+    listedAt: "2026-08-22",
+    body: `Ubicada dentro de una exclusiva comunidad residencial frente al mar en Cabarete, esta elegante villa de dos niveles combina amplitud, privacidad y un estilo de vida tropical en uno de los destinos más reconocidos de la costa norte de la República Dominicana.
+
+La propiedad cuenta con 450 m² de construcción sobre un terreno de 1,700 m². Su distribución incluye 4 habitaciones, 5 baños y una oficina privada, convirtiéndola en una excelente opción para familias que buscan comodidad, independencia y espacios funcionales.
+
+La residencia presenta una distribución abierta que integra la sala, el comedor y la cocina. Grandes puertas corredizas conectan las áreas sociales con las terrazas cubiertas, los jardines y la piscina privada, permitiendo aprovechar la iluminación natural y el clima tropical durante todo el año.
+
+La habitación principal funciona como un espacio privado dentro de la residencia, con amplio clóset, baño privado y terraza con vistas hacia el entorno tropical. La oficina independiente permite disponer de un ambiente dedicado para trabajar desde casa.
+
+## Características
+
+- 450 m² de construcción · terreno de 1,700 m²
+- 4 habitaciones · 5 baños · oficina privada
+- Villa de 2 niveles
+- Habitación principal con baño privado y terraza
+- Sala y comedor de concepto abierto · cocina moderna
+- Amplias terrazas cubiertas · piscina privada · jardines tropicales
+- Aire acondicionado · electricidad 24 horas · seguridad 24/7
+
+## Amenidades de la comunidad
+
+- Comunidad cerrada frente al mar con acceso a la playa
+- Centro ecuestre
+- Club de tenis
+- Piscina comunitaria con cascadas
+- Restaurante frente al océano
+- Senderos y áreas recreativas
+- Próxima a restaurantes, comercios, colegios y servicios de Cabarete`,
+  },
+  {
+    slug: "apartamento-kite-beach-cabarete",
+    name: "Apartamento frente al mar en Kite Beach",
+    status: "En venta",
+    price: "US$ 790,000",
+    specs: "3 hab · 2 baños · 169 m² · frente al mar",
+    location: "Kite Beach, Cabarete",
+    photos: 18,
+    listedAt: "2026-08-22",
+    body: `Descubra una forma diferente de vivir el Caribe en Kite Beach, Cabarete, uno de los destinos de playa más reconocidos de la costa norte de la República Dominicana. Este exclusivo apartamento de 169 m², con 3 habitaciones y 2 baños, combina una privilegiada ubicación frente al océano con espacios amplios, vistas abiertas al mar y acceso directo a la playa.
+
+Su distribución abierta conecta la sala y el comedor con una amplia terraza privada frente al mar, creando un espacio ideal para disfrutar de la brisa, contemplar el océano y apreciar el característico escenario de kitesurf que distingue a Kite Beach.
+
+La habitación principal disfruta de vista directa al océano, baño privado y acceso a la terraza. Las otras dos habitaciones proporcionan espacios cómodos para familiares e invitados.
+
+La propiedad forma parte de una comunidad residencial frente al mar, con acceso directo a la playa, paisajismo tropical y amenidades tipo resort, a pocos minutos de restaurantes, cafés y el entretenimiento de Cabarete.
+
+## Características
+
+- 169 m² · 3 habitaciones · 2 baños
+- Terraza privada con vista al océano
+- Habitación principal con vista al mar y baño privado
+- Sala y comedor de concepto abierto · cocina moderna
+- Acceso directo a la playa
+- Comunidad residencial frente al mar
+- Jardines y paisajismo tropical · amenidades estilo resort
+- Excelente iluminación y ventilación natural
+- Ubicación en Kite Beach, Cabarete
+
+## Mantenimiento
+
+- US$622 mensuales + consumo de electricidad`,
+  },
+  {
+    slug: "villa-loma-alta-cabrera",
+    name: "Villa con vista al mar en Cabrera",
+    status: "En venta",
+    price: "US$ 729,000",
+    specs: "4 hab · 5.5 baños · 371 m² · solar 7,100 m²",
+    location: "Loma Alta, Cabrera",
+    photos: 25,
+    listedAt: "2026-08-22",
+    body: `Ubicada en Loma Alta, Cabrera, esta impresionante villa ofrece una combinación excepcional de amplitud, privacidad y vistas panorámicas al océano y las montañas. Construida sobre un extenso terreno de 7,100 m², es una excelente alternativa para quienes desean disfrutar de la tranquilidad y belleza natural de la costa norte de la República Dominicana.
+
+La propiedad cuenta con aproximadamente 371 m² de construcción distribuidos entre la residencia principal y una casa independiente para huéspedes. Se encuentra a unos 12 minutos del centro de Cabrera por carretera pavimentada y a alrededor de 1 hora y 30 minutos del Aeropuerto Internacional Gregorio Luperón de Puerto Plata.
+
+La residencia principal dispone de 3 habitaciones climatizadas y 4.5 baños. En el nivel superior, la suite principal cuenta con acceso y estacionamiento independientes, vistas prácticamente en 360 grados, balcones delantero y posterior, ducha interior y exterior, área de bar y dos vestidores.
+
+La casa de huéspedes independiente está equipada con 1 habitación climatizada, 1 baño, cocina y área de lavado. En total, la propiedad dispone de 4 habitaciones y 5.5 baños.
+
+La piscina privada de diseño orgánico está rodeada de piedra coralina, con una pequeña piscina adicional adaptable como jacuzzi.
+
+## Características
+
+- 371 m² de construcción · terreno de 7,100 m²
+- 4 habitaciones · 5.5 baños en total
+- Residencia principal de 3 habitaciones + casa de huéspedes independiente
+- Suite principal con entrada independiente y vistas 360°
+- Vista panorámica al océano y las montañas
+- Piscina privada + piscina secundaria adaptable como jacuzzi
+- Sistema de energía solar Victron Energy
+- Filtración y suavización de agua · calentamiento solar y a gas
+- Cisterna de aproximadamente 10,000 galones
+- Garaje para 1 vehículo · caseta de seguridad
+- Alarma y cámaras con acceso desde el móvil
+- Piedra coralina, techos en madera y tejas españolas
+- A 12 minutos del centro de Cabrera`,
+  },
+  {
+    slug: "villa-las-canas-frente-al-mar",
+    name: "Villa frente al mar en Las Canas",
+    status: "En venta",
+    price: "Precio a consultar",
+    specs: "4 hab · 4.5 baños · 900 m² · solar 5,717 m²",
+    location: "Las Canas, Costa Norte",
+    photos: 18,
+    listedAt: "2026-08-22",
+    body: `Ubicada en Las Canas, en la costa norte de la República Dominicana, esta impresionante villa frente al mar ofrece una combinación excepcional de privacidad, amplitud y conexión directa con el entorno natural del Caribe.
+
+La propiedad se desarrolla sobre un extraordinario terreno de 5,717 m², con aproximadamente 900 m² de construcción distribuidos en dos niveles. Su ubicación privilegiada permite disfrutar de vistas abiertas al océano, acceso directo a la playa y un ambiente de absoluta tranquilidad rodeado de vegetación tropical.
+
+Los espacios interiores se abren hacia amplias terrazas y áreas exteriores, creando una transición natural entre la residencia, los jardines, la piscina y el océano. En su construcción destacan la piedra coralina, maderas naturales, trabajos artesanales en piedra y detalles decorativos en hierro.
+
+La residencia principal dispone de tres amplias habitaciones. Una cuarta habitación tipo suite, ubicada de manera independiente junto al área de la piscina, proporciona un espacio privado adicional para huéspedes. La propiedad también incorpora dos viviendas independientes destinadas al personal.
+
+## Características
+
+- 5,717 m² de terreno · 900 m² de construcción
+- 4 habitaciones · 4.5 baños · 2 niveles
+- Ubicación frente al mar con acceso directo a la playa
+- Piscina privada · amplias terrazas
+- Vistas al océano y a las montañas
+- Piedra coralina y materiales naturales
+- Aire acondicionado · electricidad 24 horas · seguridad 24/7
+- Suite independiente para huéspedes
+- 2 viviendas independientes para el personal
+- Amplias áreas verdes y vegetación tropical`,
   },
   {
     slug: "villa-palmera-xxi",
@@ -453,6 +623,52 @@ La propiedad cuenta con 156 m², incluyendo sus dos estacionamientos y locker pr
 Precio de venta: US$360,000 negociables.
 
 Una excelente oportunidad para adquirir una propiedad contemporánea, con ubicación privilegiada y completas amenidades en el corazón de Piantini.`,
+  },
+  {
+    slug: "apartamento-playa-nueva-romana",
+    name: "Apartamento en Playa Nueva Romana",
+    status: "En venta",
+    price: "US$ 320,000",
+    specs: "2 hab · 2 baños · 149.85 m² · primera línea de playa",
+    location: "Playa Nueva Romana, San Pedro de Macorís",
+    photos: 16,
+    listedAt: "2026-08-22",
+    body: `Ubicado en primera línea de playa, dentro de uno de los complejos residenciales más exclusivos de la zona Este.
+
+## Características del apartamento
+
+- 149.85 m²
+- Primer nivel
+- Sala
+- Comedor
+- Cocina
+- 2 habitaciones, cada una con su baño
+- Área de lavado
+- Jacuzzi privado
+
+## Amenidades y servicios del complejo
+
+- Piscina
+- Más de 2 kilómetros de playa
+- Club de playa y casa club
+- Campo de golf PGA de 18 hoyos
+- Campo de golf ejecutivo de 9 hoyos
+- Casa Club de Golf
+- Centro deportivo · gimnasio
+- Canchas de pádel, pickleball, petanca y FootGolf
+- Salón de yoga · spa y área de masajes
+- Restaurantes de especialidades
+- Supermercado y minimarket
+- Casino
+- Áreas y parques infantiles
+- Centro de ocio y negocios · salones para eventos
+- Área comercial
+- Dos hoteles cinco estrellas
+- Transporte interno
+- Seguridad las 24 horas
+- Peluquería y servicio de courier
+
+Una propiedad ideal para vivir frente al mar, disfrutar en familia o invertir en un entorno exclusivo con amenidades completamente desarrolladas.`,
   },
   {
     slug: "apartamento-la-esperilla-amueblado",
