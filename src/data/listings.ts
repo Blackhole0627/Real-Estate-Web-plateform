@@ -12,6 +12,11 @@ export interface Listing {
   location: string;
   /** Number of photos in /assets/listings/<slug>/1.jpg … <n>.jpg */
   photos: number;
+  /**
+   * Explicit photo URLs (database-backed listings). When present they take
+   * precedence over the numbered convention above.
+   */
+  photoUrls?: string[];
   /** Optional curated cover image; defaults to photo 1. */
   cover?: string;
   /**
@@ -1254,10 +1259,11 @@ export function listingsByNewest(): Listing[] {
 }
 
 export function listingCover(l: Listing): string {
-  return l.cover ?? `/assets/listings/${l.slug}/1.jpg`;
+  return l.cover ?? l.photoUrls?.[0] ?? `/assets/listings/${l.slug}/1.jpg`;
 }
 
 export function listingPhotos(l: Listing): string[] {
+  if (l.photoUrls) return l.photoUrls;
   return Array.from(
     { length: l.photos },
     (_, i) => `/assets/listings/${l.slug}/${i + 1}.jpg`,

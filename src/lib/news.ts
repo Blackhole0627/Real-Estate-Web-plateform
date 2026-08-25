@@ -75,6 +75,33 @@ function isHeading(line: string): boolean {
   return true;
 }
 
+/** Parses the house plain-text article format into render blocks. */
+export function blocksFromText(text: string): ArticleBlock[] {
+  const blocks: ArticleBlock[] = [];
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line) continue;
+    if (/^[*✓•-]\s+/.test(line)) {
+      blocks.push({ type: "li", text: line.replace(/^[*✓•-]\s+/, "") });
+    } else if (isHeading(line)) {
+      blocks.push({ type: "h", text: line });
+    } else {
+      blocks.push({ type: "p", text: line });
+    }
+  }
+  return blocks;
+}
+
+/** The lede is the first paragraph-like line of a body. */
+export function ledeFromText(text: string): string {
+  return (
+    text
+      .split(/\r?\n/)
+      .map((l) => l.trim())
+      .find(Boolean) ?? ""
+  );
+}
+
 function parse(slug: string, category: string): Article {
   const raw = fs.readFileSync(
     path.join(process.cwd(), "src", "data", "news", `${slug}.txt`),
@@ -87,23 +114,13 @@ function parse(slug: string, category: string): Article {
 
   const title = lines[0];
   const lede = lines[1] ?? "";
-  const blocks: ArticleBlock[] = [];
-  for (const line of lines.slice(2)) {
-    if (/^[*✓•-]\s+/.test(line)) {
-      blocks.push({ type: "li", text: line.replace(/^[*✓•-]\s+/, "") });
-    } else if (isHeading(line)) {
-      blocks.push({ type: "h", text: line });
-    } else {
-      blocks.push({ type: "p", text: line });
-    }
-  }
   return {
     slug,
     category,
     title,
     lede,
     image: `/assets/news/${slug}.jpg`,
-    blocks,
+    blocks: blocksFromText(lines.slice(2).join("\n")),
   };
 }
 
