@@ -5,27 +5,39 @@ COMPLETOS y desplegados en modo latente. El sitio sigue funcionando con los
 datos en archivos hasta que existan las variables de entorno de Supabase;
 en ese momento el panel cobra vida sin ningún cambio de código.
 
-## 1. Crear el proyecto de Supabase (con el CLIENTE, ~20 min)
+## 1. Supabase — RUTA FÁCIL (recomendada, ~5 min de tu parte)
 
 1. En https://supabase.com crear la cuenta CON EL CORREO DEL CLIENTE
    (mismo principio de propiedad que GitHub y Vercel).
-2. Crear un proyecto: nombre `onkerhome`, región East US (la más cercana
-   a RD). Guardar la contraseña de la base de datos.
-3. SQL Editor → pegar y ejecutar el contenido de `supabase/schema.sql`.
-4. Storage → crear DOS buckets públicos: `listings` y `news`
-   (marcar "Public bucket" en ambos).
-5. Authentication → Users → "Add user" → crear el usuario administrador
-   con el correo del cliente y una contraseña (este será el login del
-   panel en /admin).
-6. Enviarme tres valores de Project Settings → API:
-   - Project URL
-   - anon public key
-   - service_role key (solo para la migración única; no se guarda)
+2. Icono de la cuenta (arriba a la derecha) → Account Settings →
+   Access Tokens → "Generate new token" → copiar el token.
+3. Enviarme el token junto con una contraseña de base de datos que tú
+   elijas. Con eso yo hago TODO lo demás por API: crear el proyecto,
+   ejecutar el esquema, crear los buckets, crear el usuario administrador
+   del panel, migrar el contenido y verificar. El token se usa por
+   operación, no se guarda, y se revoca después desde la misma página.
 
-## 2. Después de enviarme las claves (mi parte, pero la disparas tú)
+## 1B. Supabase — ruta manual (solo si prefieres hacerlo a mano)
+
+1. Crear un proyecto: nombre `onkerhome`, región East US. Guardar la
+   contraseña de la base de datos.
+2. SQL Editor → pegar y ejecutar el contenido de `supabase/schema.sql`.
+3. Storage → crear DOS buckets públicos: `listings` y `news`.
+4. Authentication → Users → "Add user" → crear el usuario administrador
+   (correo del cliente + contraseña; será el login de /admin).
+5. Enviarme de Project Settings → API: Project URL, anon public key y
+   service_role key (esta última solo para la migración única).
+
+## 2. Después del token o las claves (mi parte)
 
 - Yo ejecuto `scripts/migrate-content.ts` (sube ~700 fotos e inserta las
   37 propiedades y 22 artículos) y verifico el sitio en modo base de datos.
+
+## 2B. Meta Pixel / CAPI (cuando el cliente envíe el token)
+
+- El cliente debe generar el token de acceso de la API de conversiones
+  (ver mensaje enviado). Con el token: variable `META_CAPI_TOKEN` en
+  Vercel; el Pixel 228203565063501 y los eventos ya estarán en el código.
 
 ## 3. Variables de entorno en Vercel (2 min)
 
