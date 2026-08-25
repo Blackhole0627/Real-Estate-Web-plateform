@@ -13,6 +13,10 @@ create table if not exists listings (
   specs text not null,
   location text not null,
   body text not null default '',
+  -- English fields for the /en site (fall back to Spanish when null)
+  name_en text,
+  specs_en text,
+  body_en text,
   -- ordered array of public photo URLs; first one is the default cover
   photos jsonb not null default '[]'::jsonb,
   cover text,
@@ -31,6 +35,9 @@ create table if not exists articles (
   category text not null,
   -- article body in the house plain-text format (first paragraph = lede)
   body text not null default '',
+  -- English fields for the /en site (fall back to Spanish when null)
+  title_en text,
+  body_en text,
   image text,
   published boolean not null default true,
   published_at date not null default now(),
