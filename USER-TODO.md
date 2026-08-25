@@ -1,43 +1,28 @@
-# USER-TODO — pasos que solo tú (o el cliente) pueden hacer
+# USER-TODO — estado y pasos restantes
 
-Estado del código: el panel de administración y el sitio en inglés están
-COMPLETOS y desplegados en modo latente. El sitio sigue funcionando con los
-datos en archivos hasta que existan las variables de entorno de Supabase;
-en ese momento el panel cobra vida sin ningún cambio de código.
+## ✅ COMPLETADO (2026-08-25/26)
 
-## 1. Supabase — RUTA FÁCIL (recomendada, ~5 min de tu parte)
+- Supabase: proyecto del cliente creado, esquema, buckets, usuario admin,
+  36 propiedades + 20 artículos + ~700 fotos migrados, traducciones EN
+  sincronizadas. Credenciales en
+  C:UsersAdministratorVideosprojectsonker-supabase-credentials.txt
+- Vercel: variables de entorno configuradas por API y redeploy hecho.
+  PRODUCCIÓN EN MODO BASE DE DATOS. Panel vivo en onkerhomes.com/admin
+  (login: onkerhome@gmail.com, contraseña en el archivo de credenciales).
+- Meta Pixel 228203565063501 + Conversions API activos con banner de
+  cookies (los eventos solo se envían tras aceptar). Verificado en vivo.
 
-1. En https://supabase.com crear la cuenta CON EL CORREO DEL CLIENTE
-   (mismo principio de propiedad que GitHub y Vercel).
-2. Icono de la cuenta (arriba a la derecha) → Account Settings →
-   Access Tokens → "Generate new token" → copiar el token.
-3. Enviarme el token junto con una contraseña de base de datos que tú
-   elijas. Con eso yo hago TODO lo demás por API: crear el proyecto,
-   ejecutar el esquema, crear los buckets, crear el usuario administrador
-   del panel, migrar el contenido y verificar. El token se usa por
-   operación, no se guarda, y se revoca después desde la misma página.
+## PENDIENTE
 
-## 1B. Supabase — ruta manual (solo si prefieres hacerlo a mano)
-
-1. Crear un proyecto: nombre `onkerhome`, región East US. Guardar la
-   contraseña de la base de datos.
-2. SQL Editor → pegar y ejecutar el contenido de `supabase/schema.sql`.
-3. Storage → crear DOS buckets públicos: `listings` y `news`.
-4. Authentication → Users → "Add user" → crear el usuario administrador
-   (correo del cliente + contraseña; será el login de /admin).
-5. Enviarme de Project Settings → API: Project URL, anon public key y
-   service_role key (esta última solo para la migración única).
-
-## 2. Después del token o las claves (mi parte)
-
-- Yo ejecuto `scripts/migrate-content.ts` (sube ~700 fotos e inserta las
-  37 propiedades y 22 artículos) y verifico el sitio en modo base de datos.
-
-## 2B. Meta Pixel / CAPI (cuando el cliente envíe el token)
-
-- El cliente debe generar el token de acceso de la API de conversiones
-  (ver mensaje enviado). Con el token: variable `META_CAPI_TOKEN` en
-  Vercel; el Pixel 228203565063501 y los eventos ya estarán en el código.
+1. REVOCAR los tokens usados (ya no hacen falta):
+   - Supabase: supabase.com → Account → Access Tokens
+   - Vercel: vercel.com → Account Settings → Tokens
+   - GitHub: regenerar ambos tokens cuando haya un momento tranquilo
+2. Prueba con el cliente en Meta Events Manager → pestaña Probar eventos:
+   navegar la página, abrir una propiedad, tocar WhatsApp y enviar un
+   formulario; deben aparecer PageView, ViewContent, Contact y Lead.
+3. Entregar al cliente su acceso al panel (correo + contraseña del archivo
+   de credenciales) con una mini-capacitación.
 
 ## 3. Variables de entorno en Vercel (2 min)
 
