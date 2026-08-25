@@ -2,17 +2,22 @@
 
 import { useState } from "react";
 import { waLink } from "@/data/site";
+import { getDict, type Lang } from "@/lib/i18n";
 
-export default function ValuationBand() {
+export default function ValuationBand({ lang = "es" }: { lang?: Lang }) {
+  const t = getDict(lang);
   const [nombre, setNombre] = useState("");
   const [tel, setTel] = useState("");
   const [sector, setSector] = useState("");
-  const [tipo, setTipo] = useState("Apartamento");
+  const [tipo, setTipo] = useState(t.valTypes[0]);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!nombre.trim() || !tel.trim() || !sector.trim()) return;
-    const msg = `Hola Onker Home, quiero vender mi propiedad.\nNombre: ${nombre.trim()}\nTeléfono: ${tel.trim()}\nInmueble: ${tipo} en ${sector.trim()}`;
+    const msg =
+      lang === "en"
+        ? `Hello Onker Home, I want to sell my property.\nName: ${nombre.trim()}\nPhone: ${tel.trim()}\nProperty: ${tipo} in ${sector.trim()}`
+        : `Hola Onker Home, quiero vender mi propiedad.\nNombre: ${nombre.trim()}\nTeléfono: ${tel.trim()}\nInmueble: ${tipo} en ${sector.trim()}`;
     window.open(waLink(msg), "_blank");
   };
 
@@ -21,26 +26,26 @@ export default function ValuationBand() {
       <div className="wrap val-grid">
         <div className="reveal">
           <span className="eyebrow" style={{ color: "#8f8f8f" }}>
-            Propietarios
+            {t.valEyebrow}
           </span>
-          <h2 style={{ marginTop: 16 }}>Vende tu propiedad</h2>
+          <h2 style={{ marginTop: 16 }}>{t.valTitle}</h2>
           <p className="sub" style={{ marginTop: 16 }}>
-            Conoce su valor de mercado y recibe asesoría para venderla.
+            {t.valSub}
           </p>
         </div>
         <form className="reveal" onSubmit={submit}>
           <input
             type="text"
-            placeholder="Nombre"
-            aria-label="Nombre"
+            placeholder={t.valName}
+            aria-label={t.valName}
             required
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
           />
           <input
             type="tel"
-            placeholder="Teléfono / WhatsApp"
-            aria-label="Teléfono"
+            placeholder={t.valPhone}
+            aria-label={t.valPhone}
             required
             value={tel}
             onChange={(e) => setTel(e.target.value)}
@@ -48,29 +53,24 @@ export default function ValuationBand() {
           <input
             type="text"
             className="full"
-            placeholder="Sector y ciudad del inmueble"
-            aria-label="Sector"
+            placeholder={t.valSector}
+            aria-label={t.valSector}
             required
             value={sector}
             onChange={(e) => setSector(e.target.value)}
           />
           <select
             className="full"
-            aria-label="Tipo de inmueble"
+            aria-label={t.valTypeAria}
             value={tipo}
             onChange={(e) => setTipo(e.target.value)}
           >
-            <option>Apartamento</option>
-            <option>Casa / Villa</option>
-            <option>Penthouse</option>
-            <option>Solar / Terreno</option>
-            <option>Local comercial</option>
+            {t.valTypes.map((v) => (
+              <option key={v}>{v}</option>
+            ))}
           </select>
-          <button type="submit">Quiero vender mi propiedad</button>
-          <small>
-            Al enviar, un asesor inmobiliario te contactará por WhatsApp o
-            llamada. Sin costo ni compromiso.
-          </small>
+          <button type="submit">{t.valButton}</button>
+          <small>{t.valNote}</small>
         </form>
       </div>
     </section>

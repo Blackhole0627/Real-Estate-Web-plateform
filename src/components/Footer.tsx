@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
+import { getDict, langPrefix, type Lang } from "@/lib/i18n";
 import {
   Pin,
   Phone,
@@ -16,7 +17,9 @@ import {
 
 const waFallback = `https://wa.me/${site.whatsapp}`;
 
-export default function Footer() {
+export default function Footer({ lang = "es" }: { lang?: Lang }) {
+  const t = getDict(lang);
+  const p = langPrefix(lang);
   return (
     <footer className="site" id="footer">
       <div className="wrap">
@@ -79,29 +82,24 @@ export default function Footer() {
             <WhatsAppOutline />
           </a>
         </div>
-        <p className="f-tag">
-          {site.name} | Inmobiliaria boutique de República Dominicana,
-          especializada en marketing digital.
-        </p>
+        <p className="f-tag">{t.fTagline}</p>
         <hr className="f-rule" />
-        <nav className="f-nav" aria-label="Enlaces">
-          <Link href="/#split">Comprar</Link>
-          <Link href="/#valorar">Vender</Link>
-          <Link href="/propiedades">Propiedades</Link>
-          <Link href="/nosotros">Nosotros</Link>
-          <Link href="/testimonios">Testimonios</Link>
-          <Link href="/actualidad">Actualidad</Link>
-          <Link href="/#join">Newsletter</Link>
-          <Link href="/politica-de-privacidad">Política de privacidad</Link>
+        <nav className="f-nav" aria-label={t.fLinksAria}>
+          <Link href={`${p}/#split`}>{t.fBuy}</Link>
+          <Link href={`${p}/#valorar`}>{t.fSell}</Link>
+          <Link href={`${p}/propiedades`}>{t.fProps}</Link>
+          <Link href={`${p}/nosotros`}>{t.fAbout}</Link>
+          <Link href={`${p}/testimonios`}>{t.fTesti}</Link>
+          <Link href={`${p}/actualidad`}>{t.fNews}</Link>
+          <Link href={`${p}/#join`}>{t.fNewsletter}</Link>
+          <Link href="/politica-de-privacidad">{t.fPrivacy}</Link>
         </nav>
-        <p className="f-copy">
-          © 2026 {site.legal} · Todos los derechos reservados
-        </p>
+        <p className="f-copy">© 2026 {site.legal} · {t.fRights}</p>
         <p className="f-cred">
           Santo Domingo, República Dominicana · {site.tagline}
         </p>
       </div>
-      <a className="f-top" href="#top" aria-label="Volver arriba">
+      <a className="f-top" href="#top" aria-label={t.fTopAria}>
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path
             d="m6 14 6-6 6 6"
@@ -111,7 +109,7 @@ export default function Footer() {
             strokeLinejoin="round"
           />
         </svg>
-        Subir
+        {t.fTop}
       </a>
     </footer>
   );

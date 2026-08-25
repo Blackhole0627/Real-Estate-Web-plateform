@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { waLink } from "@/data/site";
+import { getDict, type Lang } from "@/lib/i18n";
 import { Heart, House, Key } from "./icons";
 
 const icons = [
@@ -10,7 +11,8 @@ const icons = [
   { k: "key", label: "Llave", Icon: Key },
 ] as const;
 
-export default function JoinNetwork() {
+export default function JoinNetwork({ lang = "es" }: { lang?: Lang }) {
+  const t = getDict(lang);
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [email, setEmail] = useState("");
@@ -27,39 +29,40 @@ export default function JoinNetwork() {
       return;
     }
     setErr(false);
-    const msg = `Hola Onker Home, quiero unirme a su red y recibir oportunidades.\nNombre: ${nombre.trim()}${apellido.trim() ? " " + apellido.trim() : ""}\nCorreo: ${email.trim()}`;
+    const full = `${nombre.trim()}${apellido.trim() ? " " + apellido.trim() : ""}`;
+    const msg =
+      lang === "en"
+        ? `Hello Onker Home, I want to join your network and receive opportunities.\nName: ${full}\nEmail: ${email.trim()}`
+        : `Hola Onker Home, quiero unirme a su red y recibir oportunidades.\nNombre: ${full}\nCorreo: ${email.trim()}`;
     window.open(waLink(msg), "_blank");
   };
 
   return (
     <section className="join" id="join">
       <div className="wrap reveal">
-        <h3>Únete a nuestra red</h3>
-        <p className="sub2">
-          Recibe antes que nadie las nuevas propiedades y oportunidades del
-          mercado inmobiliario dominicano.
-        </p>
+        <h3>{t.joinTitle}</h3>
+        <p className="sub2">{t.joinSub}</p>
         <form className="jform" onSubmit={submit} noValidate>
           <input
             type="text"
-            placeholder="Nombre"
-            aria-label="Nombre"
+            placeholder={t.joinFirst}
+            aria-label={t.joinFirst}
             required
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
           />
           <input
             type="text"
-            placeholder="Apellido"
-            aria-label="Apellido"
+            placeholder={t.joinLast}
+            aria-label={t.joinLast}
             value={apellido}
             onChange={(e) => setApellido(e.target.value)}
           />
           <input
             type="email"
             className="full"
-            placeholder="Correo electrónico"
-            aria-label="Correo electrónico"
+            placeholder={t.joinEmail}
+            aria-label={t.joinEmail}
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -77,9 +80,9 @@ export default function JoinNetwork() {
           <div className="full" style={{ textAlign: "center" }}>
             <div className={`human${err ? " err" : ""}`}>
               <p>
-                Confirma que eres humano seleccionando la <b>casa</b>.
+                {t.joinHuman} <b>{t.joinHumanWord}</b>.
               </p>
-              <div className="hicons" role="group" aria-label="Verificación">
+              <div className="hicons" role="group" aria-label={t.joinVerifyAria}>
                 {icons.map(({ k, label, Icon }) => (
                   <button
                     key={k}
@@ -99,12 +102,9 @@ export default function JoinNetwork() {
           </div>
           <div className="full" style={{ textAlign: "center" }}>
             <button className="sbt" type="submit">
-              Enviar
+              {t.joinSend}
             </button>
-            <p className="jnote">
-              Al enviar aceptas recibir comunicaciones de Onker Home. Puedes
-              darte de baja cuando quieras.
-            </p>
+            <p className="jnote">{t.joinNote}</p>
           </div>
         </form>
       </div>

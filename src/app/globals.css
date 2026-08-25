@@ -222,6 +222,18 @@ h4 {
   align-items: center;
   gap: 18px;
 }
+.hd-lang {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  border: 1px solid currentColor;
+  padding: 6px 10px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.hd-lang:hover {
+  opacity: 1;
+}
 .burger {
   display: flex;
   width: 40px;

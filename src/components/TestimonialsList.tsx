@@ -2,11 +2,19 @@
 
 import { useRef, useState } from "react";
 import type { Testimonial } from "@/data/content";
+import { getDict, type Lang } from "@/lib/i18n";
 import { ArrowLeft, ArrowRight } from "./icons";
 
 const PAGE_SIZE = 6;
 
-export default function TestimonialsList({ items }: { items: Testimonial[] }) {
+export default function TestimonialsList({
+  items,
+  lang = "es",
+}: {
+  items: Testimonial[];
+  lang?: Lang;
+}) {
+  const d = getDict(lang);
   const [page, setPage] = useState(0);
   const topRef = useRef<HTMLDivElement>(null);
   const pages = Math.ceil(items.length / PAGE_SIZE);
@@ -29,10 +37,10 @@ export default function TestimonialsList({ items }: { items: Testimonial[] }) {
           <div className="tst-tag">{t.tag}</div>
         </article>
       ))}
-      <nav className="tst-pag" aria-label="Páginas de testimonios">
+      <nav className="tst-pag" aria-label={d.testiEyebrow}>
         <button
           className="arr"
-          aria-label="Página anterior"
+          aria-label={d.prevAria}
           onClick={() => go(page - 1)}
           disabled={page === 0}
         >
@@ -42,7 +50,7 @@ export default function TestimonialsList({ items }: { items: Testimonial[] }) {
           <button
             key={p}
             className={`tst-pg${p === page ? " on" : ""}`}
-            aria-label={`Página ${p + 1}`}
+            aria-label={`${d.pageAria} ${p + 1}`}
             aria-current={p === page ? "page" : undefined}
             onClick={() => go(p)}
           >
@@ -51,7 +59,7 @@ export default function TestimonialsList({ items }: { items: Testimonial[] }) {
         ))}
         <button
           className="arr"
-          aria-label="Página siguiente"
+          aria-label={d.nextAria}
           onClick={() => go(page + 1)}
           disabled={page === pages - 1}
         >

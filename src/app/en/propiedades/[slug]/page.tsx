@@ -9,6 +9,7 @@ import NewBadge from "@/components/NewBadge";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { site, waLink } from "@/data/site";
 import { listingCover, listingPhotos } from "@/data/listings";
+import { getDict, pricePart, statusLabel } from "@/lib/i18n";
 import { getListingBySlug, getListings } from "@/lib/repo";
 
 export async function generateStaticParams() {
@@ -16,16 +17,16 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  props: PageProps<"/propiedades/[slug]">,
+  props: PageProps<"/en/propiedades/[slug]">,
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const l = await getListingBySlug(slug);
-  if (!l) return { title: "Propiedad" };
+  const l = await getListingBySlug(slug, "en");
+  if (!l) return { title: "Property" };
   return {
     title: `${l.name} · ${l.location}`,
-    description: `${l.name} — ${l.specs} — ${l.location}. ${l.status} por Onker Home.`,
+    description: `${l.name} — ${l.specs} — ${l.location}. ${statusLabel(l.status, "en")} by Onker Home.`,
     alternates: {
-      canonical: `/propiedades/${l.slug}`,
+      canonical: `/en/propiedades/${l.slug}`,
       languages: {
         es: `/propiedades/${l.slug}`,
         en: `/en/propiedades/${l.slug}`,
@@ -72,20 +73,21 @@ function Body({ text }: { text: string }) {
   return <div className="l-body">{blocks}</div>;
 }
 
-export default async function ListingPage(
-  props: PageProps<"/propiedades/[slug]">,
+export default async function ListingPageEn(
+  props: PageProps<"/en/propiedades/[slug]">,
 ) {
   const { slug } = await props.params;
-  const l = await getListingBySlug(slug);
+  const l = await getListingBySlug(slug, "en");
   if (!l) notFound();
+  const t = getDict("en");
 
   const cover = listingCover(l);
   const photos = listingPhotos(l).filter((p) => p !== cover);
-  const price = `${l.pricePrefix ? `${l.pricePrefix} ` : ""}${l.price}${
-    l.priceSuffix ? ` ${l.priceSuffix}` : ""
+  const price = `${l.pricePrefix ? `${pricePart(l.pricePrefix, "en")} ` : ""}${l.price}${
+    l.priceSuffix ? ` ${pricePart(l.priceSuffix, "en")}` : ""
   }`;
   const wa = waLink(
-    `Hola Onker Home, me interesa la propiedad "${l.name}" (${l.location}). ¿Podemos coordinar más detalles?`,
+    `Hello Onker Home, I'm interested in "${l.name}" (${l.location}). Could you send me more details?`,
   );
 
   const numericPrice = Number(l.price.replace(/[^0-9.]/g, ""));
@@ -93,9 +95,9 @@ export default async function ListingPage(
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
     name: l.name,
-    url: `${site.url}/propiedades/${l.slug}`,
+    url: `${site.url}/en/propiedades/${l.slug}`,
     image: `${site.url}${cover}`,
-    description: `${l.name} — ${l.specs} — ${l.location}. ${l.status} por Onker Home.`,
+    description: `${l.name} — ${l.specs} — ${l.location}. ${statusLabel(l.status, "en")} by Onker Home.`,
     ...(Number.isFinite(numericPrice) && numericPrice > 0
       ? {
           offers: {
@@ -109,7 +111,7 @@ export default async function ListingPage(
 
   return (
     <>
-      <Header solid />
+      <Header solid lang="en" altHref={`/propiedades/${l.slug}`} />
       <main id="top" className="page">
         <section className="l-hero">
           <Image
@@ -124,11 +126,11 @@ export default async function ListingPage(
         <section className="band tight">
           <div className="wrap l-layout">
             <article>
-              <Link className="l-back" href="/propiedades">
-                ← Todas las propiedades
+              <Link className="l-back" href="/en/propiedades">
+                {t.backToAll}
               </Link>
-              <span className="p-st l-st">{l.status}</span>{" "}
-              <NewBadge listedAt={l.listedAt} />
+              <span className="p-st l-st">{statusLabel(l.status, "en")}</span>{" "}
+              <NewBadge listedAt={l.listedAt} lang="en" />
               <h1 className="l-title">{l.name}</h1>
               <p className="l-loc">{l.location}</p>
               <Body text={l.body} />
@@ -138,15 +140,12 @@ export default async function ListingPage(
                 <div className="l-price">{price}</div>
                 <div className="l-specs">{l.specs}</div>
                 <a className="btn solid full" href={wa} target="_blank" rel="noopener">
-                  Consultar por WhatsApp
+                  {t.waCta}
                 </a>
                 <a className="btn full" href={`tel:${site.phoneTel}`}>
-                  Llamar · {site.phoneDisplay}
+                  {t.callCta} · {site.phoneDisplay}
                 </a>
-                <p className="l-note">
-                  Un asesor de Onker Home te responderá a la brevedad. Sin costo
-                  ni compromiso.
-                </p>
+                <p className="l-note">{t.detailNote}</p>
               </div>
             </aside>
           </div>
@@ -154,13 +153,13 @@ export default async function ListingPage(
         {photos.length > 0 && (
           <section className="band tight">
             <div className="wrap">
-              <span className="eyebrow">Galería</span>
+              <span className="eyebrow">{t.galeria}</span>
               <GalleryGrid photos={photos} name={l.name} />
             </div>
           </section>
         )}
       </main>
-      <Footer />
+      <Footer lang="en" />
       <WhatsAppFloat />
       <script
         type="application/ld+json"

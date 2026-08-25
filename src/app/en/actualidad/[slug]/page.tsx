@@ -6,25 +6,25 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { site, waLink } from "@/data/site";
+import { getDict } from "@/lib/i18n";
 import { getArticleBySlug, getArticles } from "@/lib/repo";
 
 export async function generateStaticParams() {
-  return (await getArticles()).map((a) => ({ slug: a.slug }));
+  return (await getArticles("en")).map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata(
-  props: PageProps<"/actualidad/[slug]">,
+  props: PageProps<"/en/actualidad/[slug]">,
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const a = await getArticleBySlug(slug);
-  if (!a) return { title: "Actualidad" };
-  const description =
-    a.lede.length > 155 ? `${a.lede.slice(0, 152)}…` : a.lede;
+  const a = await getArticleBySlug(slug, "en");
+  if (!a) return { title: "News" };
+  const description = a.lede.length > 155 ? `${a.lede.slice(0, 152)}…` : a.lede;
   return {
     title: a.title,
     description,
     alternates: {
-      canonical: `/actualidad/${a.slug}`,
+      canonical: `/en/actualidad/${a.slug}`,
       languages: {
         es: `/actualidad/${a.slug}`,
         en: `/en/actualidad/${a.slug}`,
@@ -39,14 +39,15 @@ export async function generateMetadata(
   };
 }
 
-export default async function ArticlePage(
-  props: PageProps<"/actualidad/[slug]">,
+export default async function ArticlePageEn(
+  props: PageProps<"/en/actualidad/[slug]">,
 ) {
   const { slug } = await props.params;
-  const a = await getArticleBySlug(slug);
+  const a = await getArticleBySlug(slug, "en");
   if (!a) notFound();
+  const t = getDict("en");
 
-  const others = (await getArticles())
+  const others = (await getArticles("en"))
     .filter((x) => x.slug !== a.slug)
     .slice(0, 3);
 
@@ -56,19 +57,19 @@ export default async function ArticlePage(
     headline: a.title,
     description: a.lede,
     image: `${site.url}${a.image}`,
-    url: `${site.url}/actualidad/${a.slug}`,
+    url: `${site.url}/en/actualidad/${a.slug}`,
     publisher: { "@type": "Organization", name: site.name },
   };
 
   return (
     <>
-      <Header solid />
+      <Header solid lang="en" altHref={`/actualidad/${a.slug}`} />
       <main id="top" className="page">
         <article>
           <section className="art-head">
             <div className="wrap">
-              <Link className="l-back" href="/actualidad">
-                ← Actualidad
+              <Link className="l-back" href="/en/actualidad">
+                {t.artBack}
               </Link>
               <div className="a-tag">{a.category}</div>
               <h1 className="art-title">{a.title}</h1>
@@ -100,51 +101,51 @@ export default async function ArticlePage(
               )}
             </div>
             <div className="art-cta">
-              <p>
-                ¿Quieres comprar, vender o invertir en República Dominicana?
-              </p>
+              <p>{t.artCtaQ}</p>
               <a
                 className="btn solid"
                 href={waLink(
-                  "Hola Onker Home, leí un artículo en su página y quisiera hablar con un asesor.",
+                  "Hello Onker Home, I read an article on your website and I'd like to speak with an advisor.",
                 )}
                 target="_blank"
                 rel="noopener"
               >
-                Hablar con un asesor
+                {t.artCtaBtn}
               </a>
             </div>
           </div>
         </article>
 
-        <section className="band tight" style={{ background: "var(--alt)" }}>
-          <div className="wrap">
-            <span className="eyebrow">Sigue leyendo</span>
-            <div className="art-grid" style={{ marginTop: 26 }}>
-              {others.map((o) => (
-                <Link
-                  className="a-card"
-                  href={`/actualidad/${o.slug}`}
-                  key={o.slug}
-                >
-                  <div className="a-ph">
-                    <Image
-                      src={o.image}
-                      alt=""
-                      fill
-                      sizes="(max-width:640px) 100vw, 33vw"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                  <div className="a-tag">{o.category}</div>
-                  <div className="a-title">{o.title}</div>
-                </Link>
-              ))}
+        {others.length > 0 && (
+          <section className="band tight" style={{ background: "var(--alt)" }}>
+            <div className="wrap">
+              <span className="eyebrow">{t.artKeepReading}</span>
+              <div className="art-grid" style={{ marginTop: 26 }}>
+                {others.map((o) => (
+                  <Link
+                    className="a-card"
+                    href={`/en/actualidad/${o.slug}`}
+                    key={o.slug}
+                  >
+                    <div className="a-ph">
+                      <Image
+                        src={o.image}
+                        alt=""
+                        fill
+                        sizes="(max-width:640px) 100vw, 33vw"
+                        style={{ objectFit: "cover" }}
+                      />
+                    </div>
+                    <div className="a-tag">{o.category}</div>
+                    <div className="a-title">{o.title}</div>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
       </main>
-      <Footer />
+      <Footer lang="en" />
       <WhatsAppFloat />
       <script
         type="application/ld+json"

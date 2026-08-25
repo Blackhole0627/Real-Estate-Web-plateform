@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { getDict, langPrefix, type Lang } from "@/lib/i18n";
 
-export default function SplitCta() {
+export default function SplitCta({ lang = "es" }: { lang?: Lang }) {
+  const t = getDict(lang);
+  const p = langPrefix(lang);
   return (
     <section className="split" id="split">
       <div className="half">
@@ -12,13 +15,10 @@ export default function SplitCta() {
           style={{ objectFit: "cover" }}
         />
         <div className="in">
-          <h3>¿Comprando una propiedad?</h3>
-          <p>
-            Te acompañamos desde la búsqueda hasta la firma: selección curada,
-            visitas y asesoría legal en cada paso.
-          </p>
-          <a className="btn light" href="#props">
-            Explorar propiedades
+          <h3>{t.splitBuyTitle}</h3>
+          <p>{t.splitBuyText}</p>
+          <a className="btn light" href={`${p}/propiedades?f=venta`}>
+            {t.splitBuyBtn}
           </a>
         </div>
       </div>
@@ -31,13 +31,10 @@ export default function SplitCta() {
           style={{ objectFit: "cover" }}
         />
         <div className="in">
-          <h3>¿Vendiendo tu inmueble?</h3>
-          <p>
-            Marketing digital profesional, compradores calificados y un acuerdo
-            de captación que firmas desde tu teléfono.
-          </p>
+          <h3>{t.splitSellTitle}</h3>
+          <p>{t.splitSellText}</p>
           <a className="btn light" href="#valorar">
-            Valorar mi propiedad
+            {t.splitSellBtn}
           </a>
         </div>
       </div>

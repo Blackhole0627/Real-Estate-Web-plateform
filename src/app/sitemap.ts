@@ -3,9 +3,10 @@ import { site } from "@/data/site";
 import { getArticles, getListings } from "@/lib/repo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [listings, articles] = await Promise.all([
+  const [listings, articles, articlesEn] = await Promise.all([
     getListings(),
     getArticles(),
+    getArticles("en"),
   ]);
   return [
     { url: site.url, changeFrequency: "weekly", priority: 1 },
@@ -31,6 +32,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${site.url}/actualidad/${a.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    // English site
+    { url: `${site.url}/en`, changeFrequency: "weekly", priority: 0.9 },
+    {
+      url: `${site.url}/en/propiedades`,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    { url: `${site.url}/en/nosotros`, changeFrequency: "monthly", priority: 0.6 },
+    {
+      url: `${site.url}/en/testimonios`,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${site.url}/en/actualidad`,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    ...listings.map((l) => ({
+      url: `${site.url}/en/propiedades/${l.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...articlesEn.map((a) => ({
+      url: `${site.url}/en/actualidad/${a.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
     })),
   ];
 }

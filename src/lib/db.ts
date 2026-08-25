@@ -26,6 +26,9 @@ export interface ListingRow {
   specs: string;
   location: string;
   body: string;
+  name_en: string | null;
+  specs_en: string | null;
+  body_en: string | null;
   photos: string[];
   cover: string | null;
   listed_at: string | null;
@@ -37,6 +40,8 @@ export interface ArticleRow {
   title: string;
   category: string;
   body: string;
+  title_en: string | null;
+  body_en: string | null;
   image: string | null;
   published_at: string;
 }

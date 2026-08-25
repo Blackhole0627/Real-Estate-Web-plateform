@@ -6,71 +6,68 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Reveal from "@/components/Reveal";
 import TestimonialsList from "@/components/TestimonialsList";
 import { site, waLink } from "@/data/site";
+import { getDict } from "@/lib/i18n";
 import { getTestimonials } from "@/lib/repo";
 
 export const metadata: Metadata = {
-  title: "Testimonios",
+  title: "Testimonials",
   description:
-    "Lo que dicen los clientes de Onker Home: compras, ventas, alquileres e inversiones acompañadas de principio a fin en República Dominicana.",
+    "What Onker Home clients say: purchases, sales, rentals and investments guided from start to finish in the Dominican Republic.",
   alternates: {
-    canonical: "/testimonios",
+    canonical: "/en/testimonios",
     languages: { es: "/testimonios", en: "/en/testimonios" },
   },
 };
 
-export default async function TestimoniosPage() {
+export default async function TestimonialsPageEn() {
   const items = await getTestimonials();
+  const t = getDict("en");
   return (
     <>
-      <Header />
+      <Header lang="en" altHref="/testimonios" />
       <main id="top">
         <section className="n-hero">
           <Image
             src="/assets/sell-banner.jpg"
-            alt="Letrero de Onker Home Real Estate"
+            alt="Onker Home Real Estate sign"
             fill
             priority
             sizes="100vw"
             style={{ objectFit: "cover" }}
           />
           <div className="n-hero-in">
-            <span className="eyebrow">Testimonios</span>
-            <h1>Lo que dicen nuestros clientes</h1>
+            <span className="eyebrow">{t.testiEyebrow}</span>
+            <h1>{t.testiTitle}</h1>
             <div className="n-hero-rule" aria-hidden="true" />
-            <p>
-              Historias reales de compras, ventas, alquileres e inversiones
-              acompañadas de principio a fin.
-            </p>
+            <p>{t.testiPageSub}</p>
           </div>
         </section>
 
         <section className="band tight">
-          <TestimonialsList items={items} />
+          <TestimonialsList items={items} lang="en" />
         </section>
 
         <section className="band tight n-cta">
           <div className="wrap" style={{ textAlign: "center" }}>
-            <h3 className="reveal">Tu historia puede ser la próxima</h3>
-            <p className="sub2 reveal">
-              Escríbenos y descubre por qué nuestros clientes nos recomiendan.
-            </p>
+            <h3 className="reveal">{t.testiCta}</h3>
+            <p className="sub2 reveal">{t.testiCtaSub}</p>
             <div className="n-cta-row reveal">
               <a
                 className="btn light"
-                href={waLink("Hola Onker Home, quisiera hablar con un asesor.")}
+                href={waLink("Hello Onker Home, I'd like to speak with an advisor.")}
                 target="_blank"
                 rel="noopener"
               >
-                Escribir por WhatsApp
+                {t.aboutWa}
               </a>
               <a className="btn light" href={`tel:${site.phoneTel}`}>
-                Llamar · {site.phoneDisplay}
+                {t.callCta} · {site.phoneDisplay}
               </a>
             </div>
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lang="en" />
       <WhatsAppFloat />
       <Reveal />
     </>

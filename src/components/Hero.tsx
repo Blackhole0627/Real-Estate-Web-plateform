@@ -1,12 +1,15 @@
 import Link from "next/link";
 import HeroVideo from "./HeroVideo";
+import { getDict, langPrefix, type Lang } from "@/lib/i18n";
 
 /**
  * Photo-first hero: the image is the LCP and always paints immediately.
  * The video (HeroVideo) is a progressive enhancement layered on top for
  * capable desktop connections only.
  */
-export default function Hero() {
+export default function Hero({ lang = "es" }: { lang?: Lang }) {
+  const t = getDict(lang);
+  const p = langPrefix(lang);
   return (
     <section className="hero" id="top">
       <picture>
@@ -20,26 +23,21 @@ export default function Hero() {
       </picture>
       <HeroVideo src="/hero.mp4" poster="/assets/hero.jpg" />
       <div className="hero-in">
-        <span className="eyebrow">
-          Inmobiliaria boutique · República Dominicana
-        </span>
+        <span className="eyebrow">{t.heroEyebrow}</span>
         <h1>
-          Encuentra tu <br />
-          próxima propiedad
+          {t.heroTitle1} <br />
+          {t.heroTitle2}
         </h1>
-        <p>
-          Compra, alquila o invierte en propiedades seleccionadas en República
-          Dominicana.
-        </p>
-        <form className="hsearch" action="/propiedades">
+        <p>{t.heroSub}</p>
+        <form className="hsearch" action={`${p}/propiedades`}>
           <input
             type="text"
             name="q"
-            placeholder="Busca por ciudad, sector o propiedad"
-            aria-label="Buscar propiedades"
+            placeholder={t.searchPlaceholder}
+            aria-label={t.searchAria}
           />
-          <button type="submit" aria-label="Buscar">
-            <span className="bt">Buscar</span>{" "}
+          <button type="submit" aria-label={t.searchButton}>
+            <span className="bt">{t.searchButton}</span>{" "}
             <svg viewBox="0 0 24 24" fill="none">
               <circle
                 cx="11"
@@ -59,29 +57,29 @@ export default function Hero() {
         </form>
         <div className="row">
           <a className="btn light" href="#props">
-            Comprar
+            {t.heroBuy}
           </a>
           <a className="btn light" href="#valorar">
-            Vender
+            {t.heroSell}
           </a>
         </div>
       </div>
-      <nav className="qlinks" aria-label="Accesos rápidos">
-        <Link className="ql" href="/propiedades?f=venta">
-          <span className="t">Propiedades</span>
-          <span className="d">Residencias curadas en venta y alquiler</span>
+      <nav className="qlinks" aria-label={t.quickAria}>
+        <Link className="ql" href={`${p}/propiedades?f=venta`}>
+          <span className="t">{t.qlProps}</span>
+          <span className="d">{t.qlPropsD}</span>
         </Link>
         <a className="ql" href="#testi">
-          <span className="t">Testimonios</span>
-          <span className="d">Lo que dicen nuestros clientes</span>
+          <span className="t">{t.qlTesti}</span>
+          <span className="d">{t.qlTestiD}</span>
         </a>
         <a className="ql" href="#valorar">
-          <span className="t">Vender</span>
-          <span className="d">Valora tu propiedad sin compromiso</span>
+          <span className="t">{t.qlSell}</span>
+          <span className="d">{t.qlSellD}</span>
         </a>
         <a className="ql" href="#footer">
-          <span className="t">Contacto</span>
-          <span className="d">Habla con un asesor hoy</span>
+          <span className="t">{t.qlContact}</span>
+          <span className="d">{t.qlContactD}</span>
         </a>
       </nav>
     </section>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StatBand from "@/components/StatBand";
@@ -10,12 +11,21 @@ import JoinNetwork from "@/components/JoinNetwork";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Reveal from "@/components/Reveal";
-import type { Metadata } from "next";
 import { site } from "@/data/site";
 import { getArticles, getFeaturedListings, getTestimonials } from "@/lib/repo";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/", languages: { es: "/", en: "/en" } },
+  title: "Onker Home · Luxury real estate in the Dominican Republic",
+  description:
+    "Buy, rent and invest in the best areas of the Dominican Republic. Onker Home — boutique real estate agency specialized in digital marketing, Santo Domingo.",
+  alternates: { canonical: "/en", languages: { es: "/", en: "/en" } },
+  openGraph: {
+    title: "Onker Home · Luxury real estate in the Dominican Republic",
+    description:
+      "Boutique real estate agency of the Dominican Republic. Where luxury is lived.",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const jsonLd = {
@@ -31,26 +41,26 @@ const jsonLd = {
   },
 };
 
-export default async function Home() {
+export default async function HomeEn() {
   const [featured, testimonials, articles] = await Promise.all([
-    getFeaturedListings(6),
+    getFeaturedListings(6, "en"),
     getTestimonials(),
-    getArticles(),
+    getArticles("en"),
   ]);
   return (
     <>
-      <Header />
+      <Header lang="en" altHref="/" />
       <main>
-        <Hero />
-        <StatBand />
-        <Testimonials items={testimonials} />
-        <PropertySlider featured={featured} />
-        <SplitCta />
-        <ValuationBand />
-        <Articles articles={articles} />
-        <JoinNetwork />
+        <Hero lang="en" />
+        <StatBand lang="en" />
+        <Testimonials items={testimonials} lang="en" />
+        <PropertySlider featured={featured} lang="en" />
+        <SplitCta lang="en" />
+        <ValuationBand lang="en" />
+        <Articles articles={articles} lang="en" />
+        <JoinNetwork lang="en" />
       </main>
-      <Footer />
+      <Footer lang="en" />
       <WhatsAppFloat />
       <Reveal />
       <script

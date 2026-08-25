@@ -3,20 +3,28 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { Testimonial } from "@/data/content";
+import { getDict, langPrefix, type Lang } from "@/lib/i18n";
 import { ArrowLeft, ArrowRight } from "./icons";
 
-export default function Testimonials({ items }: { items: Testimonial[] }) {
+export default function Testimonials({
+  items,
+  lang = "es",
+}: {
+  items: Testimonial[];
+  lang?: Lang;
+}) {
   const [i, setI] = useState(0);
   const n = items.length;
   const next = () => setI((v) => (v + 1) % n);
   const prev = () => setI((v) => (v - 1 + n) % n);
+  const t = getDict(lang);
 
   return (
     <section className="band testi" id="testi">
       <div className="wrap">
         <div className="t2-head reveal">
-          <span className="eyebrow">Testimonios</span>
-          <h3>Lo que dicen nuestros clientes</h3>
+          <span className="eyebrow">{t.testiEyebrow}</span>
+          <h3>{t.testiTitle}</h3>
         </div>
 
         <div className="t2-stage reveal" aria-live="polite">
@@ -45,16 +53,16 @@ export default function Testimonials({ items }: { items: Testimonial[] }) {
           })}
         </div>
         <div className="t2-arrows">
-          <button className="arr" aria-label="Anterior" onClick={prev}>
+          <button className="arr" aria-label={t.prevAria} onClick={prev}>
             <ArrowLeft />
           </button>
-          <button className="arr" aria-label="Siguiente" onClick={next}>
+          <button className="arr" aria-label={t.nextAria} onClick={next}>
             <ArrowRight />
           </button>
         </div>
         <div className="t2-all">
-          <Link className="btn solid" href="/testimonios">
-            Ver todos los testimonios
+          <Link className="btn solid" href={`${langPrefix(lang)}/testimonios`}>
+            {t.testiAll}
           </Link>
         </div>
       </div>

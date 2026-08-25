@@ -1,26 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getArticles } from "@/lib/repo";
+import type { Article } from "@/lib/news";
+import { getDict, langPrefix, type Lang } from "@/lib/i18n";
 
-export default async function Articles() {
-  const latest = (await getArticles()).slice(0, 3);
+export default function Articles({
+  articles,
+  lang = "es",
+}: {
+  articles: Article[];
+  lang?: Lang;
+}) {
+  const t = getDict(lang);
+  const p = langPrefix(lang);
+  const latest = articles.slice(0, 3);
   return (
     <section className="band" id="blog">
       <div className="wrap">
         <div className="t-head reveal">
           <div>
-            <span className="eyebrow">Actualidad</span>
-            <h3 style={{ marginTop: 14 }}>Últimos artículos</h3>
+            <span className="eyebrow">{t.artEyebrow}</span>
+            <h3 style={{ marginTop: 14 }}>{t.artTitle}</h3>
           </div>
-          <Link className="p-more" href="/actualidad">
-            Ver todos
+          <Link className="p-more" href={`${p}/actualidad`}>
+            {t.artAll}
           </Link>
         </div>
         <div className="art-grid">
           {latest.map((a) => (
             <Link
               className="a-card reveal"
-              href={`/actualidad/${a.slug}`}
+              href={`${p}/actualidad/${a.slug}`}
               key={a.slug}
             >
               <div className="a-ph">

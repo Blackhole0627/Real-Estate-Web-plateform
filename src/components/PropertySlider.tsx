@@ -3,61 +3,69 @@
 import Image from "next/image";
 import Link from "next/link";
 import { listingCover, type Listing } from "@/data/listings";
+import { getDict, langPrefix, pricePart, statusLabel, type Lang } from "@/lib/i18n";
 import NewBadge from "./NewBadge";
 import { useCarousel } from "./useCarousel";
 import { ArrowLeft, ArrowRight } from "./icons";
 
-export default function PropertySlider({ featured }: { featured: Listing[] }) {
+interface Props {
+  featured: Listing[];
+  lang?: Lang;
+}
+
+export default function PropertySlider({ featured, lang = "es" }: Props) {
   const { next, prev, trackStyle } = useCarousel(featured.length);
+  const t = getDict(lang);
+  const p = langPrefix(lang);
 
   return (
     <section className="band" id="props">
       <div className="wrap">
         <div className="t-head reveal">
           <div>
-            <span className="eyebrow">Propiedades destacadas</span>
-            <h3 style={{ marginTop: 14 }}>Residencias de excepción</h3>
+            <span className="eyebrow">{t.propsEyebrow}</span>
+            <h3 style={{ marginTop: 14 }}>{t.propsTitle}</h3>
           </div>
           <div className="arrows">
-            <button className="arr" aria-label="Anterior" onClick={prev}>
+            <button className="arr" aria-label={t.prevAria} onClick={prev}>
               <ArrowLeft />
             </button>
-            <button className="arr" aria-label="Siguiente" onClick={next}>
+            <button className="arr" aria-label={t.nextAria} onClick={next}>
               <ArrowRight />
             </button>
           </div>
         </div>
         <div className="p-view reveal">
           <div className="p-track" style={trackStyle}>
-            {featured.map((p) => (
+            {featured.map((l) => (
               <Link
                 className="p-card"
-                href={`/propiedades/${p.slug}`}
-                key={p.slug}
+                href={`${p}/propiedades/${l.slug}`}
+                key={l.slug}
               >
                 <div className="p-ph">
-                  <span className="p-st">{p.status}</span>
-                  <NewBadge listedAt={p.listedAt} />
+                  <span className="p-st">{statusLabel(l.status, lang)}</span>
+                  <NewBadge listedAt={l.listedAt} lang={lang} />
                   <Image
-                    src={listingCover(p)}
-                    alt={`${p.name}, ${p.location}`}
+                    src={listingCover(l)}
+                    alt={`${l.name}, ${l.location}`}
                     fill
                     sizes="(max-width:640px) 100vw, (max-width:1000px) 50vw, 33vw"
                     style={{ objectFit: "cover" }}
                   />
                 </div>
                 <div className="p-price">
-                  {p.pricePrefix ? `${p.pricePrefix} ` : ""}
-                  {p.price}
-                  {p.priceSuffix ? (
-                    <span className="mo"> {p.priceSuffix}</span>
+                  {l.pricePrefix ? `${pricePart(l.pricePrefix, lang)} ` : ""}
+                  {l.price}
+                  {l.priceSuffix ? (
+                    <span className="mo"> {pricePart(l.priceSuffix, lang)}</span>
                   ) : null}
                 </div>
-                <div className="p-specs">{p.specs}</div>
-                <div className="p-name">{p.name}</div>
-                <div className="p-loc">{p.location}</div>
+                <div className="p-specs">{l.specs}</div>
+                <div className="p-name">{l.name}</div>
+                <div className="p-loc">{l.location}</div>
                 <div className="p-foot">
-                  <span className="p-more">Ver más</span>
+                  <span className="p-more">{t.seeMore}</span>
                 </div>
               </Link>
             ))}

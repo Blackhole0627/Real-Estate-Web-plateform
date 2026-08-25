@@ -5,33 +5,32 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Reveal from "@/components/Reveal";
+import { getDict } from "@/lib/i18n";
 import { getArticles } from "@/lib/repo";
 
 export const metadata: Metadata = {
-  title: "Actualidad",
+  title: "News",
   description:
-    "Noticias y análisis del sector inmobiliario y financiero de República Dominicana: mercado, inversión, impuestos, guías y tendencias, por Onker Home.",
+    "Real estate and financial news and analysis from the Dominican Republic: market, investment, taxes, guides and trends, by Onker Home.",
   alternates: {
-    canonical: "/actualidad",
+    canonical: "/en/actualidad",
     languages: { es: "/actualidad", en: "/en/actualidad" },
   },
 };
 
-export default async function ActualidadPage() {
-  const articles = await getArticles();
+export default async function NewsPageEn() {
+  const articles = await getArticles("en");
+  const t = getDict("en");
   return (
     <>
-      <Header solid />
+      <Header solid lang="en" altHref="/actualidad" />
       <main id="top" className="page">
         <section className="page-head">
           <div className="wrap" style={{ textAlign: "center" }}>
-            <span className="eyebrow">Actualidad</span>
-            <h2 style={{ marginTop: 16 }}>
-              Información inmobiliaria y financiera de República Dominicana
-            </h2>
+            <span className="eyebrow">{t.artEyebrow}</span>
+            <h2 style={{ marginTop: 16 }}>{t.artPageTitle}</h2>
             <p className="sub" style={{ margin: "16px auto 0" }}>
-              Análisis, guías y noticias para comprar, vender e invertir con
-              mejor información.
+              {t.artPageSub}
             </p>
           </div>
         </section>
@@ -42,7 +41,7 @@ export default async function ActualidadPage() {
               {articles.map((a) => (
                 <Link
                   className="a-card reveal in"
-                  href={`/actualidad/${a.slug}`}
+                  href={`/en/actualidad/${a.slug}`}
                   key={a.slug}
                 >
                   <div className="a-ph">
@@ -63,7 +62,7 @@ export default async function ActualidadPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lang="en" />
       <WhatsAppFloat />
       <Reveal />
     </>

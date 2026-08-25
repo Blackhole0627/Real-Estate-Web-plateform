@@ -13,7 +13,10 @@ export const metadata: Metadata = {
   title: "Nosotros",
   description:
     "La historia de Onker Home: una inmobiliaria boutique de República Dominicana nacida de un legado familiar de honestidad, pasión y confianza. Conoce a nuestro equipo.",
-  alternates: { canonical: "/nosotros" },
+  alternates: {
+    canonical: "/nosotros",
+    languages: { es: "/nosotros", en: "/en/nosotros" },
+  },
 };
 
 export default async function NosotrosPage() {

@@ -11,7 +11,13 @@ const subscribe = () => () => {};
  * expires exactly 30 days after listedAt, independent of when the site was
  * last deployed (pages are static; the server snapshot renders nothing).
  */
-export default function NewBadge({ listedAt }: { listedAt?: string }) {
+export default function NewBadge({
+  listedAt,
+  lang = "es",
+}: {
+  listedAt?: string;
+  lang?: "es" | "en";
+}) {
   const fresh = useSyncExternalStore(
     subscribe,
     () => (listedAt ? Date.now() - +new Date(listedAt) < DAYS_30 : false),
@@ -19,5 +25,5 @@ export default function NewBadge({ listedAt }: { listedAt?: string }) {
   );
 
   if (!fresh) return null;
-  return <span className="p-new">Nuevo</span>;
+  return <span className="p-new">{lang === "en" ? "New" : "Nuevo"}</span>;
 }
