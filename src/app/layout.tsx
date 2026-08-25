@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Lora, Inter } from "next/font/google";
 import Image from "next/image";
+import CookieConsent from "@/components/CookieConsent";
+import MetaPixel from "@/components/MetaPixel";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -58,6 +60,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           />
         </div>
         {children}
+        <CookieConsent />
+        <MetaPixel />
       </body>
     </html>
   );

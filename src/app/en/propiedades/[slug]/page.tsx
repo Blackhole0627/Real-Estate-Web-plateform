@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GalleryGrid from "@/components/GalleryGrid";
 import NewBadge from "@/components/NewBadge";
+import TrackViewContent from "@/components/TrackViewContent";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { site, waLink } from "@/data/site";
 import { listingCover, listingPhotos } from "@/data/listings";
@@ -112,6 +113,7 @@ export default async function ListingPageEn(
   return (
     <>
       <Header solid lang="en" altHref={`/propiedades/${l.slug}`} />
+      <TrackViewContent slug={l.slug} name={l.name} />
       <main id="top" className="page">
         <section className="l-hero">
           <Image

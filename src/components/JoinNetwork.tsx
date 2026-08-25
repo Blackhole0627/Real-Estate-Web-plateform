@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { waLink } from "@/data/site";
 import { getDict, type Lang } from "@/lib/i18n";
+import { metaTrack } from "@/lib/track";
 import { Heart, House, Key } from "./icons";
 
 const icons = [
@@ -34,6 +35,7 @@ export default function JoinNetwork({ lang = "es" }: { lang?: Lang }) {
       lang === "en"
         ? `Hello Onker Home, I want to join your network and receive opportunities.\nName: ${full}\nEmail: ${email.trim()}`
         : `Hola Onker Home, quiero unirme a su red y recibir oportunidades.\nNombre: ${full}\nCorreo: ${email.trim()}`;
+    metaTrack("Lead", { form: "red" });
     window.open(waLink(msg), "_blank");
   };
 

@@ -2304,6 +2304,59 @@ footer.site {
   }
 }
 
+/* ---------- COOKIE CONSENT ---------- */
+.cc {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 100002;
+  width: min(420px, calc(100vw - 36px));
+  background: #fff;
+  border: 1px solid var(--rule);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.18);
+  padding: 20px;
+}
+.cc p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink2);
+  margin: 0 0 14px;
+}
+.cc p a {
+  text-decoration: underline;
+}
+.cc-actions {
+  display: flex;
+  gap: 10px;
+}
+.cc-accept,
+.cc-reject {
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 11px 18px;
+  transition: 0.2s;
+}
+.cc-accept {
+  background: var(--ink);
+  color: #fff;
+  border: 1px solid var(--ink);
+}
+.cc-accept:hover {
+  background: #333;
+}
+.cc-reject {
+  background: none;
+  color: var(--ink2);
+  border: 1px solid var(--rule);
+}
+.cc-reject:hover {
+  border-color: var(--ink);
+}
+
 /* ---------- WHATSAPP FLOAT ---------- */
 .onker-wa {
   position: fixed;

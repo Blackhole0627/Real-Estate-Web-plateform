@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { waLink } from "@/data/site";
 import { getDict, type Lang } from "@/lib/i18n";
+import { metaTrack } from "@/lib/track";
 
 export default function ValuationBand({ lang = "es" }: { lang?: Lang }) {
   const t = getDict(lang);
@@ -18,6 +19,7 @@ export default function ValuationBand({ lang = "es" }: { lang?: Lang }) {
       lang === "en"
         ? `Hello Onker Home, I want to sell my property.\nName: ${nombre.trim()}\nPhone: ${tel.trim()}\nProperty: ${tipo} in ${sector.trim()}`
         : `Hola Onker Home, quiero vender mi propiedad.\nNombre: ${nombre.trim()}\nTeléfono: ${tel.trim()}\nInmueble: ${tipo} en ${sector.trim()}`;
+    metaTrack("Lead", { form: "vender" });
     window.open(waLink(msg), "_blank");
   };
 
