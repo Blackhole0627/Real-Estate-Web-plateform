@@ -3,19 +3,9 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { site, waLink } from "@/data/site";
+import { site } from "@/data/site";
 import { getDict, langPrefix, type Lang } from "@/lib/i18n";
-import {
-  Phone,
-  Pin,
-  Mail,
-  Facebook,
-  XTwitter,
-  Instagram,
-  LinkedIn,
-  YouTube,
-  WhatsAppOutline,
-} from "./icons";
+import { Phone, Pin, Mail, Facebook, Instagram, Google } from "./icons";
 
 interface Props {
   solid?: boolean;
@@ -145,6 +135,10 @@ export default function Header({ solid = false, lang = "es", altHref }: Props) {
               <a href={`tel:${site.phoneTel}`}>{site.phoneIntl}</a>
             </div>
             <div className="mc-li">
+              <Phone />
+              <a href={`tel:${site.phone2Tel}`}>{site.phone2Intl}</a>
+            </div>
+            <div className="mc-li">
               <Mail />
               <a href={`mailto:${site.email}`}>{site.email}</a>
             </div>
@@ -159,14 +153,6 @@ export default function Header({ solid = false, lang = "es", altHref }: Props) {
               <Facebook />
             </a>
             <a
-              href={waLink("Hola Onker Home, quisiera más información.")}
-              target="_blank"
-              rel="noopener"
-              aria-label="X"
-            >
-              <XTwitter />
-            </a>
-            <a
               href={site.social.instagram}
               target="_blank"
               rel="noopener"
@@ -175,28 +161,12 @@ export default function Header({ solid = false, lang = "es", altHref }: Props) {
               <Instagram />
             </a>
             <a
-              href={waLink("Hola Onker Home, quisiera más información.")}
+              href={site.social.google}
               target="_blank"
               rel="noopener"
-              aria-label="LinkedIn"
+              aria-label="Google"
             >
-              <LinkedIn />
-            </a>
-            <a
-              href={waLink("Hola Onker Home, quisiera más información.")}
-              target="_blank"
-              rel="noopener"
-              aria-label="YouTube"
-            >
-              <YouTube />
-            </a>
-            <a
-              href={waLink("Hola Onker Home, quisiera más información.")}
-              target="_blank"
-              rel="noopener"
-              aria-label="WhatsApp"
-            >
-              <WhatsAppOutline />
+              <Google />
             </a>
           </div>
         </div>

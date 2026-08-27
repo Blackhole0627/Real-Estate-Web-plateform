@@ -11,7 +11,11 @@ export const site = {
   phoneIntl: "+1 849 342 6066",
   phoneTel: "+18493426066",
   whatsapp: "18493426066",
-  email: "onkerhome@gmail.com",
+  email: "Info@onkerhomes.com",
+  /** Second contact line (Jadielis Alcántara). */
+  phone2Display: "829 203 8957",
+  phone2Intl: "+1 829 203 8957",
+  phone2Tel: "+18292038957",
   address: {
     line1: "Av. Simón Bolívar esq. Máximo Gómez",
     line2: "Plaza Royal, Suite 02, Santo Domingo",
@@ -21,7 +25,8 @@ export const site = {
   hours: "Lun–Vie 9:00–18:00 · Sáb 9:00–13:00",
   social: {
     instagram: "https://www.instagram.com/onker_home/",
-    facebook: "https://www.facebook.com/share/19UTQpbyqN/",
+    facebook: "https://www.facebook.com/share/14eqJ9w7bL6/",
+    google: "https://share.google/tELwf7VW4VWDTUSMu",
   },
   stats: [
     { n: "3,000+", l: "Clientes atendidos" },

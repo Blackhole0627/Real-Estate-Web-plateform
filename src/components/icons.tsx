@@ -111,6 +111,23 @@ export const WhatsAppOutline = () => (
   </svg>
 );
 
+export const Google = () => (
+  <svg viewBox="0 0 24 24" fill="none">
+    <path
+      d="M21 12c0 5-4 9-9 9a9 9 0 1 1 6.2-15.5"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+    />
+    <path
+      d="M12 12h9"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
 export const XTwitter = () => (
   <svg viewBox="0 0 24 24" fill="none">
     <path

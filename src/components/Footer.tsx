@@ -2,20 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { getDict, langPrefix, type Lang } from "@/lib/i18n";
-import {
-  Pin,
-  Phone,
-  Mail,
-  Clock,
-  Facebook,
-  XTwitter,
-  Instagram,
-  LinkedIn,
-  YouTube,
-  WhatsAppOutline,
-} from "./icons";
-
-const waFallback = `https://wa.me/${site.whatsapp}`;
+import { Pin, Phone, Mail, Clock, Facebook, Instagram, Google } from "./icons";
 
 export default function Footer({ lang = "es" }: { lang?: Lang }) {
   const t = getDict(lang);
@@ -44,6 +31,10 @@ export default function Footer({ lang = "es" }: { lang?: Lang }) {
             <a href={`tel:${site.phoneTel}`}>{site.phoneIntl}</a>
           </div>
           <div className="f-li">
+            <Phone />
+            <a href={`tel:${site.phone2Tel}`}>{site.phone2Intl}</a>
+          </div>
+          <div className="f-li">
             <Mail />
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </div>
@@ -61,9 +52,6 @@ export default function Footer({ lang = "es" }: { lang?: Lang }) {
           >
             <Facebook />
           </a>
-          <a href={waFallback} target="_blank" rel="noopener" aria-label="X">
-            <XTwitter />
-          </a>
           <a
             href={site.social.instagram}
             target="_blank"
@@ -72,14 +60,13 @@ export default function Footer({ lang = "es" }: { lang?: Lang }) {
           >
             <Instagram />
           </a>
-          <a href={waFallback} target="_blank" rel="noopener" aria-label="LinkedIn">
-            <LinkedIn />
-          </a>
-          <a href={waFallback} target="_blank" rel="noopener" aria-label="YouTube">
-            <YouTube />
-          </a>
-          <a href={waFallback} target="_blank" rel="noopener" aria-label="WhatsApp">
-            <WhatsAppOutline />
+          <a
+            href={site.social.google}
+            target="_blank"
+            rel="noopener"
+            aria-label="Google"
+          >
+            <Google />
           </a>
         </div>
         <p className="f-tag">{t.fTagline}</p>
